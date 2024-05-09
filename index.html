@@ -9,10 +9,7 @@
     <link rel="stylesheet" href="assets/css/jquery.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital@0;1&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital@0;1&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
     <script src="https://kit.fontawesome.com/8e4a24a6de.js" crossorigin="anonymous"></script>
@@ -27,22 +24,22 @@
           <div class="c-header__title">
             <a href="#">
               <img src="assets/img/" alt="サロンアイコン">
-              <h1 class="_scrollFadeIn">HAIR</h1>
+              <h1>HAIR</h1>
             </a>
           </div>
-          <nav class="p-header__nav">
-            <ul class="p-nav__menu--pc _scrollFadeIn">
-              <li class="c-nav__menu"><a href="#l-main__home">HOME</a></li>
-              <li class="c-nav__menu"><a href="#l-main__concept">CONCEPT</a></li>
-              <li class="c-nav__menu"><a href="#l-main__menu">MENU</a></li>
-              <li class="c-nav__menu"><a href="#l-main__style">STYLE</a></li>
-              <li class="c-nav__menu"><a href="#l-main__salonInfo">SALON INFO</a></li>
-              <li class="c-nav__menu"><a href="#l-main__blogNews">BLOG&NEWS</a></li>
-              <li class="c-nav__menu"><a href="#p-footer__reserve">RESERVE</a></li>
+          <nav>
+            <ul class="p-nav__menu--pc">
+              <li><a href="#l-main__home">HOME</a></li>
+              <li><a href="#l-main__concept">CONCEPT</a></li>
+              <li><a href="#l-main__menu">MENU</a></li>
+              <li><a href="#l-main__style">STYLE</a></li>
+              <li><a href="#l-main__salonInfo">SALON INFO</a></li>
+              <li><a href="#l-main__blogNews">BLOG&NEWS</a></li>
+              <li><a href="#p-footer__reserve">RESERVE</a></li>
             </ul>
             <ul class="p-subNav__menu--sp">
-              <li class="c-subNav__menu"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-              <li class="c-subNav__menu"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
             </ul>
             <div class="p-tel__container--sp"></div>
           </nav>
@@ -55,23 +52,24 @@
 
       <main class="l-main">
         <section id="l-main__home">
-          <div class="l-home__container">
-            <div class="l-top__keyvisual">
+          <div class="p-home__container">
+            <div class="p-top__keyvisual">
               <img class="c-slideImage _scrollFadeIn" src="assets/img/" alt=トップ1>
               <img class="c-slideImage _scrollFadeIn" src="assets/img/" alt=トップ2>
               <img class="c-slideImage _scrollFadeIn" src="assets/img/" alt=トップ3>
             </div>
-            <div class="l-home__tag">
+            <div class="p-home__tag">
               <p class="c-home__tagTitle">HAIR SALON</p>
               <p class="c-home__tagText"><br></p>
             </div>
-            <a href="#l-main__concept" class="c-scroll-text pc _scrollFadeIn">
-              <span class="c-scroll-line"></span>
-              <div class="c-scroll-img">
-                <img src="assets/img/" alt="ハサミ">
-              </div>
-              <span>scroll</span>
-            </a>
+            <div class="p-scroll-content pc _scrollFadeIn">
+              <a href="#l-main__concept" >
+                <div class="c-scroll-img">
+                  <img src="assets/img/" alt="ハサミ">
+                </div>
+                <span class="c-scroll-line">scroll</span>
+              </a>
+            </div>
           </div>
         </section>
         <section id="l-main__concept">
