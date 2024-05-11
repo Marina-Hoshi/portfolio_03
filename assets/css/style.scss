@@ -22,6 +22,7 @@ $lg: 1024px;
 
 .l-wrapper{
   width: 100%;
+  height: auto;
   min-height: 100vh;
   background-color: #FFFFFF;
   color: #333333;
@@ -164,6 +165,39 @@ $lg: 1024px;
 
 .l-main {
   width: 100%;
+  height: 80%;
+
+  &__inner{
+    width: 70vw;
+    margin: 0 auto;
+  }
+
+  .p-title__container{
+    width: auto;
+    h2{
+      position: relative;
+      font-weight: 600;
+    }
+  }
+  .p-title__container h2 span::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: auto;
+    height: auto;
+    // background-size: contain;
+    // background-position: center center;
+    // background-repeat: no-repeat;
+    // background-image: url(/assets/img/common/sessor.svg);
+  }
+  .p-title__container h2 span:after {
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 30px;
+    border-bottom: 1px solid #333333;
+  }
 
   #l-main__home{
     width: 90vw;
@@ -219,7 +253,6 @@ $lg: 1024px;
         .c-triming__bottom::before {
           content: '';
           display: block;
-          // position: absolute;
           background-color: #FFFFFF;
           padding-top: 100%;
           transform: rotate(45deg);
@@ -261,41 +294,116 @@ $lg: 1024px;
   }
 
   #l-main__concept{
-    width: 70vw;
-    margin: 0 auto;
-    margin-bottom: 9%;
+    width: 100%;
+    background-color: peachpuff;
+    // margin-bottom: 9%;
   }
 
   #l-main__line{
-    width: 70vw;
+    width: 100%;
+    height: auto;
     margin: 0 auto;
-    margin-bottom: 9%;
-    background-color: #DEE4E5;
+    margin: 9% 0;
+    .c-stripe{
+      position: relative;
+      height: 14px;
+    }
+    .c-stripe::before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background-image: repeating-linear-gradient(135deg, transparent, transparent 7px, #333333 7px, #333333 8px );
+      background-size: 10px 10px; /* ストライプの間隔を均一にする */
+    }
   }
 
   #l-main__menu{
-    width: 70vw;
-    margin: 0 auto;
+    width: 100%;
+    height: 15%;
     margin-bottom: 9%;
   }
 
+    .p-menu__container{
+      .p-title__container{
+        width: 20%;
+      }
+      .p-menu__content{
+        width: 100%;
+        margin-top: -2%;
+        .p-menu__row2{
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          li {
+            position: relative;
+            width: 40%;
+            margin: 0 0 5% 10%;
+            padding: 5%;
+            box-sizing: border-box;
+            background-color: #dbe9f2;
+          }
+          .p-menu__box{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* 擬似要素がはみ出さないようにする */
+            .c-triming__top{
+              position: absolute;
+              top: 0;
+              width: 26%;
+              margin-top: -13%;
+              left: -13%;
+            }
+            .c-triming__bottom{
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              width: 26%;
+              margin-bottom: -13%;
+              right: -13%;
+            }
+            .c-triming__top::before,
+            .c-triming__bottom::before {
+              content: '';
+              display: block;
+              background-color: #FFFFFF;
+              padding-top: 100%;
+              transform: rotate(45deg);
+              z-index: 3;
+            }
+          }
+          li:nth-child(3) {
+            margin-left: 0;
+          }
+        }
+        .c-btn__content{
+          text-align: right;
+        }
+      }
+    }
+
   #l-main__img{
-    width: 70vw;
-    margin: 0 auto;
-    margin-bottom: 9%;
+    width: 100%;
+    margin: 9% 0;
     background-color: #DEE4E5;
   }
 
   #l-main__salonInfo{
-    width: 70vw;
-    margin: 0 auto;
+    width: 100%;
     margin-bottom: 9%;
+    background-color: peachpuff;
   }
 
   #l-main__style{
     width: 90vw;
     margin: 0 auto;
     margin-bottom: 9%;
+    background-color: peachpuff;
   }
 
   #l-main__blogNews{
@@ -308,6 +416,7 @@ $lg: 1024px;
 
 .l-footer{
   width: 100%;
+  height: 15%;
   padding: 10% 0 5% 0;
   background-color: #DEE4E5;
 
