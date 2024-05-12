@@ -235,11 +235,17 @@
 }
 .l-wrapper .l-main .p-menu__container .p-menu__content .p-menu__row2 li {
   position: relative;
-  width: 40%;
-  margin: 0 0 5% 10%;
-  padding: 5%;
+  width: 35%;
+  height: 11.5%; /*p-menu__boxをなくしてpaddingではなくheight*/
+  margin: 0 0 6% 6%;
+  padding: 11.5%;
   box-sizing: border-box;
   background-color: #dbe9f2;
+}
+.l-wrapper .l-main .p-menu__container .p-menu__content .p-menu__row2 li:first-child,
+.l-wrapper .l-main .p-menu__container .p-menu__content .p-menu__row2 li:last-child {
+  border: 2px solid #cbccce;
+  background-color: #FFFFFF;
 }
 .l-wrapper .l-main .p-menu__container .p-menu__content .p-menu__row2 .p-menu__box {
   position: absolute;
@@ -248,33 +254,23 @@
   width: 100%;
   height: 100%;
   overflow: hidden; /* 擬似要素がはみ出さないようにする */
+  box-sizing: border-box;
 }
-.l-wrapper .l-main .p-menu__container .p-menu__content .p-menu__row2 .p-menu__box .c-triming__top {
+.l-wrapper .l-main .p-menu__container .p-menu__content .p-menu__row2 .p-menu__box .p-menu__detail {
   position: absolute;
-  top: 0;
-  width: 26%;
-  margin-top: -13%;
-  left: -13%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
-.l-wrapper .l-main .p-menu__container .p-menu__content .p-menu__row2 .p-menu__box .c-triming__bottom {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 26%;
-  margin-bottom: -13%;
-  right: -13%;
+.l-wrapper .l-main .p-menu__container .p-menu__content .p-menu__row2 .p-menu__box .p-menu__detail h3 {
+  margin-bottom: 15%;
 }
-.l-wrapper .l-main .p-menu__container .p-menu__content .p-menu__row2 .p-menu__box .c-triming__top::before,
-.l-wrapper .l-main .p-menu__container .p-menu__content .p-menu__row2 .p-menu__box .c-triming__bottom::before {
-  content: "";
-  display: block;
-  background-color: #FFFFFF;
-  padding-top: 100%;
-  transform: rotate(45deg);
-  z-index: 3;
+.l-wrapper .l-main .p-menu__container .p-menu__content .p-menu__row2 li:first-child {
+  margin-left: 20%;
 }
 .l-wrapper .l-main .p-menu__container .p-menu__content .p-menu__row2 li:nth-child(3) {
-  margin-left: 0;
+  margin-left: 5%;
 }
 .l-wrapper .l-main .p-menu__container .p-menu__content .c-btn__content {
   text-align: right;
