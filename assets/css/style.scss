@@ -174,21 +174,25 @@ $lg: 1024px;
 
   .p-title__container{
     width: auto;
-    h2{
+    h2 {
       position: relative;
       font-weight: 600;
     }
   }
-  .p-title__container h2 span::before{
+  .p-title__container h2 span::before {
     content: "";
     position: absolute;
     top: 0;
     width: auto;
     height: auto;
+    // display: block;
+    // margin-bottom: 3rem;
+    // width: 2.2rem;
+    // height: 1.74rem;
     // background-size: contain;
     // background-position: center center;
-    // background-repeat: no-repeat;
-    // background-image: url(/assets/img/common/sessor.svg);
+    background-repeat: no-repeat;
+    background-image: url(../assets/img/scissors2.png);
   }
   .p-title__container h2 span:after {
     content: "";
@@ -331,6 +335,7 @@ $lg: 1024px;
         width: 20%;
       }
       .p-menu__content{
+        position: relative;
         width: 100%;
         margin-top: -2%;
         .p-menu__row2{
@@ -350,6 +355,7 @@ $lg: 1024px;
               width: 100%;
               height: 100%;
               border: 2px solid #cbccce;
+              box-sizing: border-box;
             }
             .p-menu__box{
               position: absolute;
@@ -363,28 +369,92 @@ $lg: 1024px;
                 position: absolute;
                 top: 50%;
                 left: 50%;
+                width: 100%;
                 transform: translate(-50%, -50%);
                 text-align: center;
                 h3{
-                  margin-bottom: 15%;
+                  margin-bottom: 6%;
                 }
               }
             }
+            .p-menu__box:hover {
+              transform: translate(5%, 5%);
+              transition: transform 0.3s ease;
+            }
+          }
+          li::after {
+            content: "";
+            position: absolute;
+            bottom: 10%;
+            left: 20%;
+            width: 16%;
+            height: 1px;
+            background-color: #B0B1B4;
           }
           li:first-child {
             margin-left: 20%;
           }
           li:nth-child(3) {
-            margin-left: 0;
+            margin: 0;
+          }
+          li:last-child {
+            margin: 0 0 0 6%;
+          }
+          .p-menu__pseudo::after {
+            content: "";
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 1px;
+            height: 25%;
+            background-color: #B0B1B4;
           }
         }
         .p-menu__row2 .p-menu__special .p-menu__box {
           border: 2px solid #cbccce;
           background-color: #FFFFFF;
-          /*ストライプ*/
+        }
+        .p-menu__row2 .p-menu__special .p-menu__boxShadow {
+          border:none;
+          background-size: auto auto;
+          background-color: rgba(255, 255, 255, 1);
+          background-image: repeating-linear-gradient(135deg, transparent, transparent 6px, rgba(219, 233, 242, 1) 6px, rgba(219, 233, 242, 1) 10px );
         }
         .c-btn__content{
-          text-align: right;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          .c-btn {
+            position: relative;
+            width: 9rem;
+            height: 9rem;
+            aspect-ratio: 1;
+            clip-path: polygon(0 100%,100% 0,100% 100%);
+            border: 1px solid #cbccce;
+            background: linear-gradient(45deg,#FFFFFF, #FFFFFF);
+            p {
+              position: absolute;
+              right: 1rem;
+              bottom: 1rem;
+            }
+          }
+          .c-btn::before {
+            content: '';
+            position: absolute;
+            bottom: -1%;
+            left: 0;
+            width: 142%;
+            height: 1px;
+            background-color: #cbccce;
+            transform-origin: bottom left;
+            transform: translateY(-50%) rotate(-45deg);
+          }
+          .c-btn:hover {
+            background: linear-gradient(45deg,#656733, #656733);
+          }
+          p:hover {
+            color: #FFFFFF;
+          }
         }
       }
     }
