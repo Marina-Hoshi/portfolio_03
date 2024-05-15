@@ -78,6 +78,43 @@
   width: 70vw;
   margin: 0 auto;
 }
+.l-wrapper .l-main .c-btn__content {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.l-wrapper .l-main .c-btn__content .c-btn {
+  position: relative;
+  width: 9rem;
+  height: 9rem;
+  aspect-ratio: 1;
+  -webkit-clip-path: polygon(0 100%, 100% 0, 100% 100%);
+          clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  border: 1px solid #cbccce;
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
+}
+.l-wrapper .l-main .c-btn__content .c-btn p {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+.l-wrapper .l-main .c-btn__content .c-btn::before {
+  content: "";
+  position: absolute;
+  bottom: -1%;
+  left: 0;
+  width: 142%;
+  height: 1px;
+  background-color: #cbccce;
+  transform-origin: bottom left;
+  transform: translateY(-50%) rotate(-45deg);
+}
+.l-wrapper .l-main .c-btn__content .c-btn:hover {
+  background: linear-gradient(45deg, #656733, #656733);
+}
+.l-wrapper .l-main .c-btn__content p:hover {
+  color: #FFFFFF;
+}
 .l-wrapper .l-main .p-title__container {
   width: auto;
 }
@@ -313,43 +350,6 @@
   background-color: rgb(255, 255, 255);
   background-image: repeating-linear-gradient(135deg, transparent, transparent 6px, rgb(219, 233, 242) 6px, rgb(219, 233, 242) 10px);
 }
-.l-wrapper .l-main .p-menu__container .p-menu__content .c-btn__content {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-.l-wrapper .l-main .p-menu__container .p-menu__content .c-btn__content .c-btn {
-  position: relative;
-  width: 9rem;
-  height: 9rem;
-  aspect-ratio: 1;
-  -webkit-clip-path: polygon(0 100%, 100% 0, 100% 100%);
-          clip-path: polygon(0 100%, 100% 0, 100% 100%);
-  border: 1px solid #cbccce;
-  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
-}
-.l-wrapper .l-main .p-menu__container .p-menu__content .c-btn__content .c-btn p {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-}
-.l-wrapper .l-main .p-menu__container .p-menu__content .c-btn__content .c-btn::before {
-  content: "";
-  position: absolute;
-  bottom: -1%;
-  left: 0;
-  width: 142%;
-  height: 1px;
-  background-color: #cbccce;
-  transform-origin: bottom left;
-  transform: translateY(-50%) rotate(-45deg);
-}
-.l-wrapper .l-main .p-menu__container .p-menu__content .c-btn__content .c-btn:hover {
-  background: linear-gradient(45deg, #656733, #656733);
-}
-.l-wrapper .l-main .p-menu__container .p-menu__content .c-btn__content p:hover {
-  color: #FFFFFF;
-}
 .l-wrapper .l-main #l-main__img {
   width: 100%;
   margin: 9% 0;
@@ -362,9 +362,125 @@
 }
 .l-wrapper .l-main #l-main__style {
   width: 90vw;
+  height: 245.6px;
   margin: 0 auto;
   margin-bottom: 9%;
-  background-color: peachpuff;
+}
+.l-wrapper .l-main .p-style__container {
+  position: relative;
+  height: 100%;
+}
+.l-wrapper .l-main .p-style__container ul {
+  display: flex;
+  height: 100%;
+}
+.l-wrapper .l-main .p-style__container ul li {
+  width: 20%;
+}
+.l-wrapper .l-main .p-style__container ul .c-style__triangle:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7.65rem;
+  z-index: 1;
+}
+.l-wrapper .l-main .p-style__container ul .c-style__triangle:first-child .c-triangle__blue {
+  position: relative;
+  width: 7.65rem;
+  height: 7.65rem;
+  aspect-ratio: 1;
+  -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 0 100%);
+  border: 1px solid #DBE9F2;
+  background: linear-gradient(45deg, #DBE9F2, #DBE9F2);
+}
+.l-wrapper .l-main .p-style__container ul .c-style__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.l-wrapper .l-main .p-style__container ul .c-style__title .c-title__container {
+  position: relative;
+  width: 15.3rem;
+  height: 15.3rem;
+  aspect-ratio: 1;
+  -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 0 100%);
+  border: 1px solid #FFFFFF;
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
+}
+.l-wrapper .l-main .p-style__container ul .c-style__title .c-title__container p {
+  display: inline-block; /* 傾けたテキストが改行されないようにするため */
+  transform: rotate(-45deg);
+  margin: 25% 0 0 32%;
+}
+.l-wrapper .l-main .p-style__container ul .c-style__stripe {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15.3rem;
+  height: 15.3rem;
+  aspect-ratio: 1;
+  -webkit-clip-path: polygon(0 100%, 100% 0, 100% 100%);
+          clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  background: repeating-linear-gradient(90deg, transparent, transparent 12px, rgb(51, 51, 51) 12px, rgb(51, 51, 51) 15px);
+}
+.l-wrapper .l-main .p-style__container ul .c-style__stripe .c-style__rhombus--thin {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  width: 14.3rem;
+  height: 14.3rem;
+  aspect-ratio: 1;
+  -webkit-clip-path: polygon(0 100%, 100% 0, 100% 100%);
+          clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  border: 1px solid #FFFFFF;
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
+}
+.l-wrapper .l-main .p-style__container ul .c-style__triangle:last-child {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 7.65rem;
+}
+.l-wrapper .l-main .c-btn__content {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.l-wrapper .l-main .c-btn__content .c-btn {
+  position: relative;
+  width: 7.65rem;
+  height: 7.65rem;
+  aspect-ratio: 1;
+  -webkit-clip-path: polygon(0 100%, 100% 0, 100% 100%);
+          clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  border: 1px solid #cbccce;
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
+}
+.l-wrapper .l-main .c-btn__content .c-btn p {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+.l-wrapper .l-main .c-btn__content .c-btn::before {
+  content: "";
+  position: absolute;
+  bottom: -2%;
+  left: 0;
+  width: 142%;
+  height: 2px;
+  background-color: #cbccce;
+  transform-origin: bottom left;
+  transform: translateY(-50%) rotate(-45deg);
+}
+.l-wrapper .l-main .c-btn__content .c-btn:hover {
+  background: linear-gradient(45deg, #656733, #656733);
+}
+.l-wrapper .l-main .c-btn__content p:hover {
+  color: #FFFFFF;
 }
 .l-wrapper .l-main #l-main__blogNews {
   width: 85vw;
