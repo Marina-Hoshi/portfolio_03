@@ -493,7 +493,7 @@ $lg: 1024px;
           top: 0;
           left: 0;
           width: 7.65rem;
-          z-index: 1;
+          z-index: 2;
           .c-triangle__blue{
             position: relative;
             width: 7.65rem;
@@ -508,6 +508,7 @@ $lg: 1024px;
           position: absolute;
           top: 0;
           left: 0;
+          z-index: 1;
           .c-title__container{
             position: relative;
             width: 15.3rem;
@@ -523,6 +524,27 @@ $lg: 1024px;
             }
           }
         }
+        .c-style__skew{
+          // position: relative;
+          transform: skewX(-45deg);
+          transform-origin: bottom left;
+          .c-skew__mask {
+            overflow: hidden;
+            img {
+              // position: absolute;
+              // top: 0;
+              // right: -50%;
+              min-width: 117.6%;
+              height: 244.8px;
+              transform: skewX(45deg);
+              transform-origin: bottom left;
+              // object-fit: cover;
+            }
+          }
+        }
+        .c-style__skew:nth-of-type(5){
+          background-color: #DBE9F2;
+        }
         .c-style__stripe {
           position: absolute;
           bottom: 0;
@@ -532,7 +554,7 @@ $lg: 1024px;
           aspect-ratio: 1;
           clip-path: polygon(0 100%,100% 0,100% 100%);
           background: repeating-linear-gradient(90deg, transparent, transparent 12px, rgba(51, 51, 51, 1) 12px, rgba(51, 51, 51, 1) 15px);
-          .c-style__rhombus--thin {
+          .c-style__skew--thin {
             position: absolute;
             bottom: 0;
             right: 0;
