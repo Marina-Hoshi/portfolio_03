@@ -515,4 +515,51 @@
   width: 80vw;
   margin: 0 auto;
 }
+.l-wrapper .l-footer .c-footer__title {
+  margin-bottom: 5%;
+}
+.l-wrapper .l-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.l-wrapper .l-footer .p-footer__box {
+  width: 33.333%;
+}
+.l-wrapper .l-footer h4 {
+  margin-bottom: 8%;
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+.l-wrapper .l-footer .p-info__address {
+  font-size: 14px;
+  line-height: 2em;
+}
+.l-wrapper .l-footer .p-info__address p {
+  margin-bottom: 1%;
+}
+.l-wrapper .l-footer .p-info__sns {
+  display: flex;
+  gap: 10%;
+  margin-top: 3%;
+}
+.l-wrapper .l-footer .p-times__contents {
+  margin-bottom: 5%;
+}
+.l-wrapper .l-footer .p-times__contents .p-times__usually {
+  margin-bottom: 5%;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+.l-wrapper .l-footer .p-times__contents .p-times__day {
+  margin-bottom: 3%;
+  font-size: 0.88em;
+}
+.l-wrapper .l-footer__bottom {
+  margin-top: 8%;
+  text-align: center;
+  font-size: 0.7em;
+}
 /*# sourceMappingURL=style.css.map */
