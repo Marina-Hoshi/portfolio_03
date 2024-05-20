@@ -9,6 +9,7 @@
   letter-spacing: 0.1em;
   line-height: 2em;
   box-sizing: border-box;
+  /*footer閉じる*/
 }
 .l-wrapper a {
   color: #333333;
@@ -511,6 +512,9 @@
   padding: 10% 0 5% 0;
   background-color: #DEE4E5;
 }
+.l-wrapper .l-footer p {
+  font-family: "Open Sans", sans-serif;
+}
 .l-wrapper .l-footer__container {
   width: 80vw;
   margin: 0 auto;
@@ -518,80 +522,114 @@
 .l-wrapper .l-footer .c-footer__title {
   margin-bottom: 5%;
 }
+@media screen and (max-width: 610px) {
+  .l-wrapper .l-footer .c-footer__title {
+    display: none;
+  }
+}
 .l-wrapper .l-footer__nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+@media screen and (max-width: 610px) {
+  .l-wrapper .l-footer__nav {
+    display: none;
+  }
+}
 .l-wrapper .l-footer .p-footer__box {
   width: 33.333%;
 }
-.l-wrapper .l-footer h4 {
+.l-wrapper .l-footer .p-footer__box h4 {
   margin-bottom: 8%;
   font-size: 0.9em;
   font-weight: 600;
   letter-spacing: 0.12em;
   line-height: 1;
 }
-.l-wrapper .l-footer .p-info__address {
+.l-wrapper .l-footer .p-footer__box .p-info__contents .p-info__address {
   font-size: 14px;
   line-height: 2em;
 }
-.l-wrapper .l-footer .p-info__address p {
+.l-wrapper .l-footer .p-footer__box .p-info__contents .p-info__address p {
   margin-bottom: 1%;
 }
-.l-wrapper .l-footer .p-info__sns {
+.l-wrapper .l-footer .p-footer__box .p-info__contents .p-info__sns {
   display: flex;
   gap: 10%;
   margin-top: 3%;
 }
-.l-wrapper .l-footer .p-times__contents {
+.l-wrapper .l-footer .p-footer__box .p-times__contents {
   margin-bottom: 5%;
 }
-.l-wrapper .l-footer .p-times__contents .p-times__usually {
+.l-wrapper .l-footer .p-footer__box .p-times__contents .p-times__usually {
   margin-bottom: 5%;
   font-size: 1.3em;
   font-weight: 600;
 }
-.l-wrapper .l-footer .p-times__contents .p-times__day {
+.l-wrapper .l-footer .p-footer__box .p-times__contents .p-times__day {
   margin-bottom: 3%;
   font-size: 0.88em;
 }
-.l-wrapper .l-footer .p-reserve__contents {
+.l-wrapper .l-footer .p-footer__box .p-reserve__contents {
   width: 100%;
 }
-.l-wrapper .l-footer .p-reserve__contents .p-reserve__contents p {
-  margin-bottom: 5%;
-  font-size: 0.9em;
-}
-.l-wrapper .l-footer .p-reserve__contents .p-reserve__button {
+.l-wrapper .l-footer .p-footer__box .p-reserve__contents .p-reserve__button {
   display: inline-block;
   width: 100%;
-  margin-bottom: 3%;
+  margin-bottom: 4%;
   padding: 4% 0;
   border: 1px solid #333333;
   background-color: #DEE4E5;
   font-size: 0.9em;
 }
-.l-wrapper .l-footer .p-reserve__contents .p-reserve__button .c-reserve__inner {
+.l-wrapper .l-footer .p-footer__box .p-reserve__contents .p-reserve__button .c-reserve__inner {
   display: flex;
   justify-content: center;
   gap: 5%;
   width: 60%;
   margin: 0 auto;
 }
-.l-wrapper .l-footer .p-reserve__contents .p-reserve__button .c-reserve__inner .c-reserve__icon .fa-solid.fa-envelope {
+.l-wrapper .l-footer .p-footer__box .p-reserve__contents .p-reserve__button .c-reserve__inner .c-reserve__icon .fa-solid.fa-envelope {
   font-size: 150%;
 }
-.l-wrapper .l-footer .p-reserve__contents .p-reserve__button .c-reserve__inner .c-reserve__inner a p {
-  font-size: 1.2em;
+.l-wrapper .l-footer .p-footer__box .p-reserve__contents .p-reserve__button .c-reserve__inner p {
+  margin-bottom: 0;
+  font-size: 1em;
   font-weight: 600;
 }
-.l-wrapper .l-footer .p-reserve__contents .p-reserve__button:hover {
+.l-wrapper .l-footer .p-footer__box .p-reserve__contents .p-reserve__button .c-reserve__inner:hover {
+  color: #FFFFFF;
+}
+.l-wrapper .l-footer .p-footer__box .p-reserve__contents .p-reserve__button:hover {
   background-color: #666666;
   border: 1px solid #666666;
 }
-.l-wrapper .l-footer .p-reserve__contents p:hover {
-  color: #FFFFFF;
+.l-wrapper .l-footer .p-footer__box .p-reserve__contents .p-footer__contact span {
+  display: inline-block;
+  border-bottom: 1px solid #666666;
+  font-size: 0.78em;
+  line-height: 2;
 }
+.l-wrapper .l-footer .p-footer__box .p-reserve__contents .p-footer__contact:hover {
+  opacity: 0.5;
+}
+.l-wrapper .l-footer .p-footer__box .p-reserve__contents p {
+  margin-bottom: 5%;
+  font-size: 0.9em;
+}
+.l-wrapper .l-footer__bottom {
+  margin-top: 5%;
+  text-align: center;
+}
+.l-wrapper .l-footer__bottom .c-footer__copyright p {
+  font-size: 0.7em;
+}
+@media screen and (max-width: 610px) {
+  .l-wrapper .l-footer__bottom .c-footer__copyright p {
+    font-size: 10px;
+  }
+}
+
+/*wrapper閉じる*/
 /*# sourceMappingURL=style.css.map */
