@@ -344,6 +344,13 @@ $lg: 1024px;
         height: 34rem;
         background-color: #DEE4E5;
         overflow: hidden;
+        .c-slideImage {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: opacity 0.5s ease;
+        }
         .p-concept__edge{
           position: absolute;
           top: 0;
@@ -526,7 +533,55 @@ $lg: 1024px;
   #l-main__img{
     width: 100%;
     margin: 9% 0;
-    background-color: #DEE4E5;
+    .p-care__container{
+      position: relative;
+      width: 100%;
+      height: 425px; /*画像反映したら修正*/
+      background-color: #DEE4E5;
+      .p-care__img{
+        width: 100%;
+        height: 100%;
+        // height: 606px;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .p-care__edge{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; /* 擬似要素がはみ出さないようにする */
+        .c-triming__top{
+          position: absolute;
+          top: 0;
+          width: 26%;
+          margin-top: -13%;
+          left: -13%;
+        }
+        .c-triming__bottom{
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 26%;
+          margin-bottom: -13%;
+          right: -13%;
+        }
+        .c-triming__top::before,
+        .c-triming__bottom::before {
+          content: '';
+          display: block;
+          background-color: #FFFFFF;
+          padding-top: 100%;
+          transform: rotate(45deg);
+          z-index: 3;
+        }
+      }
+    }
   }
 
   #l-main__salonInfo{
@@ -544,13 +599,24 @@ $lg: 1024px;
             margin: 30% 0 10% 0;
           }
         }
-        .p-salonInfo__img{
+        .p-salonInfo__imgBox{
           position: relative;
           width: 87%;
           height: 34rem;
           margin-left: -5%;
           background-color: #DEE4E5;
           overflow: hidden;
+          .c-slideImage {
+            display: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease;
+          }
+          .c-slideImage:not(:first-child) {
+            opacity: 0; /* 最初の画像以外は透明 */
+          }
           .p-salonInfo__edge{
             position: absolute;
             top: 0;
@@ -729,9 +795,170 @@ $lg: 1024px;
     width: 85vw;
     margin: 0 auto;
     margin-bottom: 9%;
-    background-color: #DEE4E5;
+
+    /*h2タイトル*/
+    h2{
+      margin-bottom: 8%;
+    }
+    h2 span:after {
+      content: none;
+    }
+
+    /*MOREボタン*/
+    .p-button__box{
+      text-align: center;
+      .c-more__button{
+        display: inline-block;
+        width: 42%;
+        margin-top: 11%;
+        padding: 2% 0;
+        border: 1px solid #333333;
+        background-color: #FFFFFF;
+        text-align: center;
+        .c-reserve__inner{
+          justify-content: center;
+          span{
+            position: relative;
+            letter-spacing: 0.1em;
+          }
+          span::after{
+            content: "";
+            position: absolute;
+            // display: block;
+            // right: 3rem;
+            // width: 72px;
+            // height: 4px;
+            // top: 50%;
+            // margin-top: -2px;
+            // background-repeat: no-repeat;
+            // background-size: contain;
+            // background-image: url(/assets/img/);
+          }
+        }
+        .c-reserve__inner:hover {
+          color: #FFFFFF;
+        }
+      }
+      .c-more__button:hover{
+        background-color: #666666;
+        border: 1px solid #666666;
+      }
+    }
+
+    /*BLOG&NEWSセクション*/
+    .l-blogNews__container{
+      display: flex;
+      justify-content: space-between;
+
+      .l-main__blog{
+        width: 45%;
+        .p-blog__imgBox{
+          width: 100%;
+          .p-blog__container{
+            position: relative;
+            width: 100%;
+            height: 175px; /*画像反映したら修正*/
+            background-color: #DEE4E5;
+            .p-blog__img{
+              width: 100%;
+              height: 100%;
+              img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+            .p-blog__edge{
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              overflow: hidden; /* 擬似要素がはみ出さないようにする */
+              .c-triming__top{
+                position: absolute;
+                top: 0;
+                width: 26%;
+                margin-top: -13%;
+                left: -13%;
+              }
+              .c-triming__bottom{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 26%;
+                margin-bottom: -13%;
+                right: -13%;
+              }
+              .c-triming__top::before,
+              .c-triming__bottom::before {
+                content: '';
+                display: block;
+                background-color: #FFFFFF;
+                padding-top: 100%;
+                transform: rotate(45deg);
+                z-index: 3;
+              }
+            }
+          }
+          .p-blog__content{
+            width: 100%;
+            margin-top: 2%;
+            font-family: "Open Sans", sans-serif;
+          }
+        }
+      }
+
+      .l-main__news{
+        width: 45%;
+        .p-news__container{
+          height: 55%;
+          .p-news__information{
+            .p-news__list{
+              display: flex;
+              width: 100%;
+              height: auto;
+              margin-bottom: 3%;
+              padding-bottom: 3%;
+              align-items: center;
+              border-bottom: 1px solid rgb(198, 201, 204);
+              .c-news__date{
+                width: 30%;
+                font-family: "Open Sans", sans-serif;
+                font-size: 0.9em;
+                font-weight: 300;
+                letter-spacing: 0.1em;
+                text-align: left;
+              }
+              .c-news__content{
+                width: 70%;
+                margin-left: 5%;
+                font-family: "Open Sans", sans-serif;
+                font-size: 0.9em;
+                line-height: 1.5em;
+                letter-spacing: 0.2em;
+                text-align: left;
+              }
+            }
+            .p-news__list:first-child {
+              padding-top: 3%;
+              border-top: 1px solid rgb(198, 201, 204);
+            }
+          }
+        }
+      }
+    }
+
+    /*ボタン*/
+    .l-main__arrow--pc {
+      width: 100%;
+    }
+    .l-main__arrow--sp {
+      display: none;
+    }
   }
-}
+}/*main閉じる*/
 
 .l-footer{
   width: 100%;
