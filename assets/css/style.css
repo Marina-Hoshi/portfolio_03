@@ -275,6 +275,16 @@
   transform: rotate(45deg);
   z-index: 3;
 }
+.l-wrapper .l-main #l-main__concept .p-concept__container .p-concept__img .c-concept__stripe {
+  position: absolute;
+  top: 2%;
+  width: 18rem;
+  height: 18rem;
+  aspect-ratio: 1;
+  -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 0 100%);
+  background: repeating-linear-gradient(90deg, transparent, transparent 13px, rgb(51, 51, 51) 13px, rgb(51, 51, 51) 15px);
+}
 .l-wrapper .l-main #l-main__concept .p-concept__container .p-concept__detail {
   width: 37.5%;
   margin-top: auto;
@@ -412,7 +422,75 @@
 .l-wrapper .l-main #l-main__salonInfo {
   width: 100%;
   margin-bottom: 9%;
-  background-color: peachpuff;
+}
+.l-wrapper .l-main #l-main__salonInfo .l-main__inner {
+  position: relative;
+}
+.l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container {
+  display: flex;
+}
+.l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__detail {
+  width: 37.5%;
+  z-index: 1;
+}
+.l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__detail .p-salonInfo__text {
+  margin: 30% 0 10% 0;
+}
+.l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__img {
+  position: relative;
+  width: 87%;
+  height: 34rem;
+  margin-left: -5%;
+  background-color: #DEE4E5;
+  overflow: hidden;
+}
+.l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__img .p-salonInfo__edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* 擬似要素がはみ出さないようにする */
+}
+.l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__img .p-salonInfo__edge .c-triming__top {
+  position: absolute;
+  top: 0;
+  width: 26%;
+  margin-top: -13%;
+  left: -13%;
+}
+.l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__img .p-salonInfo__edge .c-triming__bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 26%;
+  margin-bottom: -13%;
+  right: -13%;
+}
+.l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__img .p-salonInfo__edge .c-triming__top::before,
+.l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__img .p-salonInfo__edge .c-triming__bottom::before {
+  content: "";
+  display: block;
+  background-color: #FFFFFF;
+  padding-top: 100%;
+  transform: rotate(45deg);
+  z-index: 3;
+}
+.l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__img .c-salonInfo__stripe {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: 18rem;
+  height: 18rem;
+  aspect-ratio: 1;
+  -webkit-clip-path: polygon(100% 100%, 0 0, 100% 0);
+          clip-path: polygon(100% 100%, 0 0, 100% 0);
+  background: repeating-linear-gradient(180deg, transparent, transparent 13px, rgb(51, 51, 51) 13px, rgb(51, 51, 51) 15px);
+}
+.l-wrapper .l-main #l-main__salonInfo .l-main__inner .c-btn__content {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .l-wrapper .l-main #l-main__style {
   width: 90vw;
