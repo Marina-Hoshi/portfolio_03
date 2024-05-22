@@ -178,23 +178,22 @@ $lg: 1024px;
     width: auto;
     h2 {
       position: relative;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.5em;
+      letter-spacing: 0.12em;
       font-weight: 600;
     }
   }
   .p-title__container h2 span::before {
     content: "";
     position: absolute;
-    top: 0;
-    width: auto;
-    height: auto;
-    // display: block;
-    // margin-bottom: 3rem;
-    // width: 2.2rem;
-    // height: 1.74rem;
-    // background-size: contain;
-    // background-position: center center;
+    top: -175%;
+    width: 1.2em;
+    height: 100%;
     background-repeat: no-repeat;
-    background-image: url(../assets/img/scissors2.png);
+    background: url("../img/scissors2.png") no-repeat center center;
+    background-size: contain;
+    transform: rotate(-45deg);
   }
   .p-title__container h2 span:after {
     content: "";
@@ -304,9 +303,9 @@ $lg: 1024px;
         bottom: 0;
         right: 0;
       }
-      .p-scroll-content{
+      .p-scroll__content{
         position: absolute;
-        bottom: -17%;
+        bottom: -25%;
         left: 50%;
         width: 5vw;
         margin: 0 auto;
@@ -314,21 +313,30 @@ $lg: 1024px;
         @include sp {
           display: none;
         }
-        .c-scroll-line{
+        .c-scroll__img {
+          width: 40%;
+          margin: 0 auto;
+          img {
+            width: 100%;
+            transform: rotate(45deg);
+          }
+        }
+        .c-scroll__line{
+          position: relative;
+          top: -1em;
           font-family: "Open Sans", sans-serif;
-          font-size: 0.8em;
-          letter-spacing: 0.2em;
+          font-size: 0.7em;
         }
       }
-      .p-scroll-content::before{
+      .p-scroll__content::before{
         content: "";
         display: block;
         width: 1px;
-        height: 3rem;
+        height: 2rem;
         background-color:  #333333;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
       }
     }
   }
@@ -482,6 +490,19 @@ $lg: 1024px;
               transition: transform 0.3s ease;
             }
           }
+          li::before {
+            content: "";
+            position: absolute;
+            bottom: 5%;
+            left: 7%;
+            width: 10%;
+            height: 10%;
+            background-repeat: no-repeat;
+            background: url("../img/scissors2.png") no-repeat center center;
+            background-size: contain;
+            transform: rotate(135deg);
+            z-index: 2;
+          }
           li::after {
             content: "";
             position: absolute;
@@ -499,6 +520,18 @@ $lg: 1024px;
           }
           li:last-child {
             margin: 0 0 0 6%;
+          }
+          .p-menu__pseudo::before {
+            content: "";
+            position: absolute;
+            top: 40%;
+            right: 0.5%;
+            width: 10%;
+            height: 10%;
+            background: url("../img/scissors2.png") no-repeat center center;
+            background-size: contain;
+            transform: rotate(45deg);
+            z-index: 2;
           }
           .p-menu__pseudo::after {
             content: "";
@@ -804,7 +837,7 @@ $lg: 1024px;
       content: none;
     }
 
-    /*MOREボタン*/
+    /*長方形MOREボタン*/
     .p-button__box{
       text-align: center;
       .c-more__button{
@@ -817,26 +850,25 @@ $lg: 1024px;
         text-align: center;
         .c-reserve__inner{
           justify-content: center;
-          span{
+          p{
             position: relative;
             letter-spacing: 0.1em;
           }
-          span::after{
+          p::after{
             content: "";
             position: absolute;
-            // display: block;
-            // right: 3rem;
-            // width: 72px;
-            // height: 4px;
-            // top: 50%;
-            // margin-top: -2px;
-            // background-repeat: no-repeat;
-            // background-size: contain;
-            // background-image: url(/assets/img/);
+            top: 50%;
+            right: 20%;
+            transform: translateY(-50%);
+            display: block;
+            width: 10%;
+            height: 100%;
+            background: url("../img/longArrow2.png") no-repeat center center;
+            background-size: contain;
           }
         }
         .c-reserve__inner:hover {
-          color: #FFFFFF;
+          filter: invert(1) brightness(2);
         }
       }
       .c-more__button:hover{
@@ -949,15 +981,61 @@ $lg: 1024px;
         }
       }
     }
+  }/*#l-main__blogNews閉じる*/
 
-    /*ボタン*/
+  /*ボタン*/
+  #l-main__return{
+    margin-bottom: -3%;
     .l-main__arrow--pc {
-      width: 100%;
+      width: 5%;
+      margin-left: auto;
+      @include sp {
+        display: none;
+      }
+      .c-return__button{
+        // position: relative;
+        width: 100%;
+        img{
+          width: 100%;
+          transform: rotate(-90deg);
+        }
+      }
+      // .c-return__button::after{
+      //   content: "";
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   transform: rotate(-90deg);
+      //   display: block;
+      //   width: 100%;
+      //   height: 100%;
+      //   background: url("../img/longArrow2.png") no-repeat center center;
+      //   background-size: contain;
+      // }
     }
     .l-main__arrow--sp {
       display: none;
+      @include sp {
+        width: 100%;
+        // margin: 0 auto;
+        // text-align: center;
+        // .c-scroll__img {
+        //   width: 30%;
+        //   margin: 0 auto;
+        //   img {
+        //     width: 100%;
+        //     transform: rotate(225deg);
+        //   }
+        //   span {
+        //     position: relative;
+        //     top: -1em;
+        //     font-family: "Open Sans", sans-serif;
+        //     font-size: 0.7em;
+        //   }
+        // }
+      }
     }
-  }
+  }/*#l-main__retur閉じる*/
 }/*main閉じる*/
 
 .l-footer{
@@ -1037,9 +1115,16 @@ $lg: 1024px;
               gap: 5%;
               width: 60%;
               margin: 0 auto;
-              .c-reserve__icon{
-                .fa-solid.fa-envelope{
-                  font-size: 150%;
+              .c-tel__icon {
+                .fa-solid fa-phone {
+                  font-size: 180%;
+                }
+              }
+              .c-hotpepper__icon{
+                width: 8%;
+                img{
+                  width: 100%;
+                  transition: filter 0.3s;
                 }
               }
             }
@@ -1049,7 +1134,7 @@ $lg: 1024px;
               font-weight: 600;
             }
             .c-reserve__inner:hover {
-              color: #FFFFFF;
+              filter: invert(1) brightness(2);
             }
           }
           .p-reserve__button:hover{
