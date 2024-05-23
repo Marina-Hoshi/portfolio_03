@@ -47,10 +47,10 @@ $(document).ready(function() {
   $("#p-drawer__toggle--sp").click(function(){
     $(this).toggleClass("open");
     if ($(this).hasClass("open")) {
-      $(".l-header__inner").fadeIn();
+      $(".p-nav__container--sp").fadeIn();
       $(".c-hamburger_borderTop, .c-hamburger_borderMiddle, .c-hamburger_borderBottom").addClass("open");
     } else {
-      $(".l-header__inner").fadeOut();
+      $(".p-nav__container--sp").fadeOut();
       $(".c-hamburger_borderTop, .c-hamburger_borderMiddle, .c-hamburger_borderBottom").removeClass("open");
     }
   });
