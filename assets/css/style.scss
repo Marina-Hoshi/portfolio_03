@@ -1,9 +1,16 @@
 @charset "UTF-8";
 
-$sp: 610px;
-$md: 768px;
-$lg: 1024px;
+// $xs: px;
+$sm: 478px;
+$md: 760px;
+$lg: 978px;
+// $xl: px;
 
+@mixin xl {
+  @media screen and (max-width: ($lg)) {
+    @content;
+  }
+}
 @mixin lg {
   @media screen and (max-width: ($lg)) {
     @content;
@@ -14,11 +21,17 @@ $lg: 1024px;
     @content;
   }
 }
-@mixin sp {
-  @media screen and (max-width: ($sp)) {
+@mixin sm {
+  @media screen and (max-width: ($sm)) {
     @content;
   }
 }
+@mixin xs {
+  @media screen and (max-width: ($xs)) {
+    @content;
+  }
+}
+
 
 .l-wrapper{
   width: 100%;
@@ -44,15 +57,80 @@ $lg: 1024px;
   width: 100%;
   height: 90px;
   padding-top: 4%;
-  // @include sp {
-  //   height: 90px;
-  // }
+  @include lg {
+    height: 100vh; /*画面いっぱいの高さ*/
+    padding-top: 0;
+  }
 
   &__inner{
     display: flex;
     justify-content: space-between;
     width: 90vw;
     margin: 0 auto;
+    @include lg {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: #DBE9F2;;
+    }
+
+    // sp右上の白三角
+    .p-triangle__sp{
+      display: none;
+      @include lg {
+        width: 200px;
+        height: 200px;
+        background-color: #FFFFFF;
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+        z-index: 1;
+      }
+    }
+
+    // ×ハンバーガーメニュー
+    #p-drawer__toggle--sp{
+      @include lg {
+        position: absolute;
+        right: 40px;
+        top: 40px;
+        width: 25px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 500;
+
+      .hamburger_border {
+        position: absolute;
+        left: 8px;
+        width: 25px;
+        height: 1px;
+        background-color: #333333;
+        transition: all .6s;
+      }
+        .c-hamburger_borderTop {
+          top: 5px;
+        }
+        .c-hamburger_borderMiddle {
+          top: 8px;
+        }
+        .c-hamburger_borderBottom {
+          top: 11px;
+        }
+      }
+    }
+    ×ボタン
+      #p-drawer__toggle--sp.open .hamburger_border {
+        top: 8px;
+        width: 25px;
+      }
+      #p-drawer__toggle--sp.open .c-hamburger_borderTop {
+        transform: rotate(45deg);
+      }
+      #p-drawer__toggle--sp.open .c-hamburger_borderMiddle {
+        display: none;
+      }
+      #p-drawer__toggle--sp.open .c-hamburger_borderBottom {
+        transform: rotate(-45deg);
+      }
+
     .c-header__title{
       // position: absolute;
       // top: 120px;
@@ -60,32 +138,51 @@ $lg: 1024px;
       width: 15vw;
       height: 150px;
       z-index: 1;
-      // @include sp {
-      //   top: 35px;
-      //   left: 8%;
-      //   width: 79px;
-      //   height: 55px;
-      // }
+      @include lg {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20%;
+        height: auto;
+        text-align: center;
+      }
       h1{
         font-size: 2.4em;
         letter-spacing: 0.05em;
         line-height: 1.3em;
-        // @include sp {
-        //   font-size: 1.4em;
-        // }
+        @include lg {
+          font-size: 1.4em;
+        }
       }
     }
     nav{
       position: relative;
-      .p-nav__menu--pc{
+      @include lg {
+        position: absolute;
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20%;
+        height: auto;
+        text-align: center;
+      }
+      .p-nav__menu{
         display: flex;
         justify-content: space-between;
         width: 50vw;
-          @include sp {
-              display: none;
-            }
+        @include lg {
+          display: block;
+          width: 100%;
+        }
         li{
           font-family: "Open Sans", sans-serif;
+          font-size: 0.9em;
+          @include lg {
+            margin: 3% 0;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+          }
         }
         li:hover{
           border-bottom: 1px solid;
@@ -93,21 +190,51 @@ $lg: 1024px;
       }
       .p-subNav__menu--sp{
         display: none;
-        // @include sp {
-        //   display: flex;
-        //   justify-content: space-between;
-        //   width: 30%;
-        //   margin: 0 auto;
-        //   margin-top: 10%;
-        // }
-        // li{
-        //   @include sp {
-        //     width: 100%;
-        //   }
-        //   .fa-brands fa-facebook-f ,.fa-brands fa-instagram{
-        //     font-size: 150%;
-        //   }
-        // }
+        @include lg {
+          display: flex;
+          justify-content: space-between;
+          width: 40%;
+          margin: 0 auto;
+          margin-top: 10%;
+        }
+        li{
+          @include lg {
+            width: 100%;
+          }
+          .fa-brands fa-facebook-f ,.fa-brands fa-instagram{
+            @include lg {
+              font-size: 180%;
+            }
+          }
+        }
+      }
+      .p-tel__container--sp{
+        display: none;
+        @include lg {
+          display: inline-block;
+          width: 100%;
+          margin-top: 10%;
+          padding: 2% 0;
+          border: 1px solid #333333;
+          font-size: 0.6em;
+          .c-reserve__inner{
+            display: flex;
+            justify-content: center;
+            gap: 5%;
+            width: 60%;
+            margin: 0 auto;
+            .c-tel__icon {
+              .fa-solid fa-phone {
+                font-size: 180%;
+              }
+            }
+            p{
+              margin-bottom: 0;
+              font-size: 1.0em;
+              font-weight: 600;
+            }
+          }
+        }
       }
     }
     nav::before{
@@ -120,48 +247,13 @@ $lg: 1024px;
       content: '';
       background-image: repeating-linear-gradient(135deg, transparent, transparent 7px, #333333 7px, #333333 8px );
       background-size: 10px 10px; /* ストライプの間隔を均一にする */
+      @include lg {
+        height: 3%;
+        margin-top: -17%;
+      }
     }
   }
-
-  // ×ハンバーガーメニュー
-  //   #p-drawer__toggle--sp{
-  //     @include sp {
-  //       position: absolute;
-  //       right: 35px;
-  //       top: 48px;
-  //       width: 25px;
-  //       height: 17px;
-  //       cursor: pointer;
-  //       z-index: 500;
-
-  //     .hamburger_border {
-  //       position: absolute;
-  //       left: 8px;
-  //       width: 20px;
-  //       height: 1px;
-  //       background-color: #333333;
-  //       transition: all .6s;
-  //     }
-  //       .c-hamburger_borderTop {
-  //         top: 5px;
-  //       }
-  //       .c-hamburger_borderBottom {
-  //         top: 11px;
-  //       }
-  //     }
-  //   }
-  //   ×ボタン
-  //     #p-drawer__toggle--sp.open .hamburger_border {
-  //       top: 8px;
-  //       width: 25px;
-  //     }
-  //     #p-drawer__toggle--sp.open .c-hamburger_borderTop {
-  //       transform: rotate(45deg);
-  //     }
-  //     #p-drawer__toggle--sp.open .c-hamburger_borderBottom {
-  //       transform: rotate(-45deg);
-  //     }
-  }
+}
 // header閉じる
 
 .l-main {
@@ -247,7 +339,7 @@ $lg: 1024px;
       position: relative;
       width: 100%;
       height: 415px;
-        // @include sp {
+        // @include lg {
         //   height: 345px;
         // }
       .p-top__keyvisual{
@@ -310,7 +402,7 @@ $lg: 1024px;
         width: 5vw;
         margin: 0 auto;
         text-align: center;
-        @include sp {
+        @include lg {
           display: none;
         }
         .c-scroll__img {
@@ -989,7 +1081,7 @@ $lg: 1024px;
     .l-main__arrow--pc {
       width: 5%;
       margin-left: auto;
-      @include sp {
+      @include lg {
         display: none;
       }
       .c-return__button{
@@ -1015,7 +1107,7 @@ $lg: 1024px;
     }
     .l-main__arrow--sp {
       display: none;
-      @include sp {
+      @include lg {
         width: 100%;
         // margin: 0 auto;
         // text-align: center;
@@ -1052,7 +1144,7 @@ $lg: 1024px;
   }
     .c-footer__title{
       margin-bottom: 5%;
-      @include sp {
+      @include lg {
         display: none;
       }
     }
@@ -1060,7 +1152,7 @@ $lg: 1024px;
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
-      @include sp {
+      @include lg {
         display: none;
       }
     }
@@ -1163,7 +1255,7 @@ $lg: 1024px;
       .c-footer__copyright{
         p{
           font-size: 0.7em;
-          @include sp {
+          @include lg {
             font-size: 10px;
           }
         }

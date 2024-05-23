@@ -31,16 +31,16 @@
 } */
 
 /* フェードインする要素の初期設定 */
-/* ._scrollFadeIn {
+._scrollFadeIn {
   opacity: 0;
   transition-property: opacity;
   transition-duration: 1s;
-} */
+}
 
 /* フェードインが有効な場合のスタイル */
-/* ._isActiveFadeIn {
+._isActiveFadeIn {
   opacity: 1;
-} */
+}
 
 /* .p-about__imgTop,
 .p-about__imgBottom,

@@ -1,4 +1,4 @@
-// $(document).ready(function() {
+$(document).ready(function() {
 //   // ページ読み込み時にローディング画面を表示
 //   $("#loading-screen").fadeIn(1000);
 
@@ -40,20 +40,20 @@
 //     }
 //   );
 
-//   // 読み込み時のハンバーガーメニューボタンを閉じた状態に設定
-//   $("#p-drawer__toggle--sp").removeClass("open");
-//   $(".c-hamburger_borderTop, .c-hamburger_borderBottom").removeClass("open");
+  // 読み込み時のハンバーガーメニューボタンを閉じた状態に設定
+  $("#p-drawer__toggle--sp").removeClass("open");
+  $(".c-hamburger_borderTop, .c-hamburger_borderBottom").removeClass("open");
 
-//   $("#p-drawer__toggle--sp").click(function(){
-//     $(this).toggleClass("open");
-//     if ($(this).hasClass("open")) {
-//       $(".p-header__nav--sp").fadeIn();
-//       $(".c-hamburger_borderTop, .c-hamburger_borderBottom").addClass("open");
-//     } else {
-//       $(".p-header__nav--sp").fadeOut();
-//       $(".c-hamburger_borderTop, .c-hamburger_borderBottom").removeClass("open");
-//     }
-//   });
+  $("#p-drawer__toggle--sp").click(function(){
+    $(this).toggleClass("open");
+    if ($(this).hasClass("open")) {
+      $(".l-header__inner").fadeIn();
+      $(".c-hamburger_borderTop, .c-hamburger_borderMiddle, .c-hamburger_borderBottom").addClass("open");
+    } else {
+      $(".l-header__inner").fadeOut();
+      $(".c-hamburger_borderTop, .c-hamburger_borderMiddle, .c-hamburger_borderBottom").removeClass("open");
+    }
+  });
 
 
 //   // 画像の切り替え
@@ -78,7 +78,7 @@
 
 //   setInterval(showNextImageLeft, 3000);
 //   setInterval(showNextImageRight, 3000);
-// });
+});
 
 
 
