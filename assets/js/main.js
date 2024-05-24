@@ -1,13 +1,27 @@
 $(document).ready(function() {
+  setTimeout(function(){
+    $('.loading-rectangle').addClass('fade-in');
+    setTimeout(function() {
+      $('.loading-rectangle::before, .loading-rectangle::after').addClass('fade-in');
+    }, 300); // 0.3秒後に擬似要素
+    $('.l-wrapper').fadeIn();
+    $('body').removeClass('loading');
+  }, 1000);
+
+
+// ページの読み込みが完了したらローディング画面をフェードアウト
+// $(window).on("load", function() {
+//   $("#loading-screen").fadeOut(1500, function() {
+//     $("body").removeClass("loading"); // loadingクラスを削除してページを表示
+//   });
+// });
+
+
+
+
 //   // ページ読み込み時にローディング画面を表示
 //   $("#loading-screen").fadeIn(1000);
 
-//   // ページの読み込みが完了したらローディング画面をフェードアウト
-//   $(window).on("load", function() {
-//     $("#loading-screen").fadeOut(1500, function() {
-//       $("body").removeClass("loading"); // loadingクラスを削除してページを表示
-//     });
-//   });
 
 //   // 一定時間後に要素の表示を開始
 //   setTimeout(() => {
@@ -30,15 +44,17 @@ $(document).ready(function() {
 //     });
 //   });
 
-//   // 擬似要素のhover
-//   $('p-nav__menu--pc > .c-nav__menu').hover(
-//     function() {
-//       $(this).addClass('hovered');
-//     },
-//     function() {
-//       $(this).removeClass('hovered');
-//     }
-//   );
+
+  //画像をフィットさせる
+  // const image = document.querySelector('.c-slideImage');
+  // const container = document.querySelector('.c-concept__img');
+
+  // image.onload = function() {
+  //   if (image.height < container.clientHeight) {
+  //     image.style.height = '100%';
+  //     image.style.width = 'auto';
+  //   }
+  // }
 
   // 読み込み時のハンバーガーメニューボタンを閉じた状態に設定
   $("#p-drawer__toggle--sp").removeClass("open");
