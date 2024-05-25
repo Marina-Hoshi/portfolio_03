@@ -338,6 +338,9 @@ $lg: 978px;
     left: 0;
     width: 30px;
     border-bottom: 1px solid #333333;
+    @include lg {
+      content: none;
+    }
   }
 
   /*MOREボタン*/
@@ -686,6 +689,21 @@ $lg: 978px;
             height: 25%;
             background-color: #B0B1B4;
           }
+          // li:hover::before {
+          //   // transform: rotate(135deg);
+          //   transform: translate(5px, 5px);
+          //   transition: transform 0.3s ease;
+          // }
+          // .p-menu__pseudo:hover::before{
+          //   // transform: rotate(45deg);
+          //   transform: translate(5px, 5px);
+          //   transition: transform 0.3s ease;
+          // }
+          li:hover::after,
+          .p-menu__pseudo:hover::after {
+            transform: translate(5px, 5px);
+            transition: transform 0.3s ease;
+          }
         }
         .p-menu__row2 .p-menu__special .p-menu__box {
           border: 2px solid #cbccce;
@@ -972,6 +990,9 @@ $lg: 978px;
     width: 85vw;
     margin: 0 auto;
     margin-bottom: 9%;
+    @include lg {
+      margin-bottom: 12%;
+    }
 
     /*h2タイトル*/
     h2{
@@ -992,6 +1013,11 @@ $lg: 978px;
         border: 1px solid #333333;
         background-color: #FFFFFF;
         text-align: center;
+        @include lg {
+          width: 19vw;
+          margin-top: 3vh;
+          padding: 1.5% 0;
+        }
         .c-reserve__inner{
           justify-content: center;
           p{
@@ -1025,9 +1051,16 @@ $lg: 978px;
     .l-blogNews__container{
       display: flex;
       justify-content: space-between;
+      @include lg {
+        display: block;
+      }
 
       .l-main__blog{
         width: 45%;
+        @include lg {
+          width: 100%;
+          margin-bottom: 12%;
+        }
         .p-blog__imgBox{
           width: 100%;
           .p-blog__container{
@@ -1035,6 +1068,9 @@ $lg: 978px;
             width: 100%;
             height: 175px; /*画像反映したら修正*/
             background-color: #DEE4E5;
+            @include lg {
+              height: 40vh;
+            }
             .p-blog__img{
               width: 100%;
               height: 100%;
@@ -1058,6 +1094,10 @@ $lg: 978px;
                 width: 26%;
                 margin-top: -13%;
                 left: -13%;
+                @include lg {
+                  margin-top: -17%;
+                  left: -17%;
+                }
               }
               .c-triming__bottom{
                 position: absolute;
@@ -1066,6 +1106,10 @@ $lg: 978px;
                 width: 26%;
                 margin-bottom: -13%;
                 right: -13%;
+                @include lg {
+                  margin-bottom: -17%;
+                  right: -17%;
+                }
               }
               .c-triming__top::before,
               .c-triming__bottom::before {
@@ -1091,8 +1135,24 @@ $lg: 978px;
 
       .l-main__news{
         width: 45%;
+        @include lg {
+          width: 100%;
+        }
+        .p-title__container{
+          @include lg {
+            text-align: center;
+          }
+        }
+        h2 span:before {
+        @include lg {
+          content: none;
+        }
+        }
         .p-news__container{
           height: 55%;
+          @include lg {
+            margin-bottom: 5vh;
+          }
           .p-news__information{
             .p-news__list{
               display: flex;
@@ -1101,6 +1161,9 @@ $lg: 978px;
               padding: 3% 0;
               align-items: center;
               border-bottom: 1px solid rgb(198, 201, 204);
+              @include lg {
+                padding: 2% 0;
+              }
               .c-news__date{
                 width: 30%;
                 font-family: "Open Sans", sans-serif;
@@ -1125,6 +1188,9 @@ $lg: 978px;
             .p-news__list:first-child {
               padding-top: 3%;
               border-top: 1px solid rgb(198, 201, 204);
+              @include lg {
+                padding-top: 2%;
+              }
             }
           }
         }

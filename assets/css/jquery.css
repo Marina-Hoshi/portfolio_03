@@ -1,10 +1,11 @@
+/* ローディング中にページがスクロールできないように */
 body.loading {
   overflow: hidden;
 }
 
-.l-wrapper {
+/* .l-wrapper {
   display: none;
-}
+} */
 
 /* ローディング画面 */
 #loading-screen {
@@ -18,21 +19,27 @@ body.loading {
   justify-content: center;
   align-items: flex-start;
   background-color: #FFFFFF;
-  opacity: 0.5;
+  opacity: 1;
   z-index: 9999;
+}
+
+#loading-screen.fade-out {
+  display: none;
 }
 
 .loading-rectangle {
   width: 90vw;
   height: 415px;
   position: relative;
-  background-color: #6B8E23;
+  background-color: #656733;
   opacity: 0; /* 最初は非表示 */
   transition: opacity 1.5s ease;
 }
-
 .loading-rectangle.fade-in {
   opacity: 1;
+}
+.loading-rectangle.fade-out {
+  opacity: 0;
 }
 
 .loading-rectangle::before,
@@ -43,16 +50,14 @@ body.loading {
   height: 0;
   border-style: solid;
   border-width: 12rem 12rem 0 0;
-  border-color: #fff transparent transparent transparent;
+  border-color: #FFFFFF transparent transparent transparent;
   opacity: 0; /* 最初は非表示 */
   transition: opacity 0.5s ease, border-width 0.5s ease;
 }
-
 .loading-rectangle::before {
   top: 0;
   left: 0;
 }
-
 .loading-rectangle::after {
   bottom: 0;
   right: 0;
@@ -62,9 +67,13 @@ body.loading {
 .loading-rectangle.fade-in::before,
 .loading-rectangle.fade-in::after {
   opacity: 1;
+  transition: opacity 1s ease-in;
 }
-
-
+/* .loading-rectangle.fade-out::before,
+.loading-rectangle.fade-out::after {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+} */
 
 
 
@@ -95,17 +104,6 @@ body.loading {
   opacity: 1;
   transform: translateY(0); /* 元の位置に戻す */
 /* } */
-
-/* 擬似要素のホバー */
-/* .c-nav__menu:hover::before { */
-  /* content: ""; ホバー時に擬似要素を空にする */
-/* } */
-/*
-.c-nav__menu.hovered::before {
-  content: "|"; /* ホバー時に縦棒に変更 */
-  /* opacity: 1;
-} */
-
 
 
 

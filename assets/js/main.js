@@ -1,29 +1,32 @@
 $(document).ready(function() {
-  setTimeout(function(){
+  $("#loading-screen").fadeIn(1000);
+  setTimeout(function() {
     $('.loading-rectangle').addClass('fade-in');
     setTimeout(function() {
       $('.loading-rectangle::before, .loading-rectangle::after').addClass('fade-in');
-    }, 300); // 0.3秒後に擬似要素
-    $('.l-wrapper').fadeIn();
-    $('body').removeClass('loading');
+    }, 1000); // 0.3秒後に擬似要素
+
+    // $('.l-wrapper').fadeIn();
+
+    // .loading-rectangleと擬似要素のfade-in, bodyのloadingを消す
+    setTimeout(function() {
+      $('.loading-rectangle').removeClass('fade-in');
+      // $('.loading-rectangle::before, .loading-rectangle::after').removeClass('fade-in');
+      $('body').removeClass('loading');
+      $("#loading-screen").fadeOut(1000);
+    }, 2000);
   }, 1000);
 
 
-// ページの読み込みが完了したらローディング画面をフェードアウト
-// $(window).on("load", function() {
-//   $("#loading-screen").fadeOut(1500, function() {
-//     $("body").removeClass("loading"); // loadingクラスを削除してページを表示
-//   });
-// });
-
-
-
-
-//   // ページ読み込み時にローディング画面を表示
-//   $("#loading-screen").fadeIn(1000);
-
-
 //   // 一定時間後に要素の表示を開始
+  setTimeout(() => {
+    $(".p-scroll__content").addClass("_isActiveFadeIn");
+  }, 600);
+  // setTimeout(() => {
+  //   $("h1, .c-top__subTitle").addClass("_isActiveFadeIn");
+  // }, 1200);
+
+
 //   setTimeout(() => {
 //     $(".c-slideImage, .c-scroll-text, .p-subNav__menu--pc, .p-nav__menu--pc").addClass("_isActiveFadeIn");
 //   }, 600);
