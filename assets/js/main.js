@@ -21,49 +21,44 @@ $(document).ready(function() {
 //   // 一定時間後に要素の表示を開始
   setTimeout(() => {
     $(".p-scroll__content").addClass("_isActiveFadeIn");
-  }, 600);
+  }, 4000);
   // setTimeout(() => {
   //   $("h1, .c-top__subTitle").addClass("_isActiveFadeIn");
   // }, 1200);
 
-
-//   setTimeout(() => {
-//     $(".c-slideImage, .c-scroll-text, .p-subNav__menu--pc, .p-nav__menu--pc").addClass("_isActiveFadeIn");
-//   }, 600);
+  setTimeout(() => {
+    $(".c-slideImage, .c-scroll-text, .p-subNav__menu--pc, .p-nav__menu--pc").addClass("_isActiveFadeIn");
+  }, 600);
 //   setTimeout(() => {
 //     $("h1, .c-top__subTitle").addClass("_isActiveFadeIn");
 //   }, 1200);
 
+
 //   // スクロールイベントを監視してフェードインさせる
-//   $(window).scroll(() => {
-//     $(".p-about__imgTop, .p-about__imgBottom, .c-top__subTitle").each((index, element) => {
-//       const position = $(element).offset().top;
-//       const windowHeight = $(window).height();
-//       const scroll = $(window).scrollTop();
+  function fadeInOnScroll() {
+    $(".p-concept__container, .p-menu__row2 li, .p-salonInfo__container, .l-main__blog, .l-main__news").each(function(index, element) {
+      const position = $(element).offset().top;
+      const windowHeight = $(window).height();
+      const scroll = $(window).scrollTop();
 
-//       if (scroll > position - windowHeight + 200) {
-//         $(element).addClass("_isActiveFadeIn");
-//       }
-//     });
-//   });
+      if (scroll > position - windowHeight + 200) {
+        $(element).addClass("_isActiveFadeIn");
+      } else {
+        $(element).removeClass("_isActiveFadeIn");
+      }
+    });
+  }
 
+  $(window).on('scroll', fadeInOnScroll);
+  fadeInOnScroll(); // ページ読み込み時にも実行して初期状態を設定
 
-  //画像をフィットさせる
-  // const image = document.querySelector('.c-slideImage');
-  // const container = document.querySelector('.c-concept__img');
-
-  // image.onload = function() {
-  //   if (image.height < container.clientHeight) {
-  //     image.style.height = '100%';
-  //     image.style.width = 'auto';
-  //   }
-  // }
 
   // 読み込み時のハンバーガーメニューボタンを閉じた状態に設定
   $("#p-drawer__toggle--sp").removeClass("open");
   $(".c-hamburger_borderTop, .c-hamburger_borderBottom").removeClass("open");
 
-  $("#p-drawer__toggle--sp").click(function(){
+  // ハンバーガーメニューボタンのクリックイベント
+  $("#p-drawer__toggle--sp").click(function() {
     $(this).toggleClass("open");
     if ($(this).hasClass("open")) {
       $(".p-nav__container--sp").fadeIn();
@@ -74,29 +69,41 @@ $(document).ready(function() {
     }
   });
 
+  // スクロールイベントを監視
+  $(window).on('scroll', function() {
+    if ($("#p-drawer__toggle--sp").hasClass("open")) {
+      $(".p-nav__container--sp").fadeOut(400); // フェードアウト
+      $("#p-drawer__toggle--sp").removeClass("open");
+      $(".c-hamburger_borderTop, .c-hamburger_borderMiddle, .c-hamburger_borderBottom").removeClass("open");
+    }
+  });
+
 
 //   // 画像の切り替え
-//   const imagesLeft = $('.p-header__left img');
-//   const imagesRight = $('.p-header__right img');
-//   let currentIndexLeft = 0;
-//   let currentIndexRight = 0;
+  function setupImageSlider(containerSelector) {
+    const images = $(containerSelector + ' .c-slideImage');
+    let currentIndex = 0;
 
-//   function showNextImageLeft() {
-//     const nextIndex = (currentIndexLeft + 1) % imagesLeft.length;
-//     imagesLeft.eq(currentIndexLeft).animate({opacity: 0}, 500);
-//     imagesLeft.eq(nextIndex).animate({opacity: 1}, 500);
-//     currentIndexLeft = nextIndex;
-//   }
+    // 最初の画像を表示
+    images.eq(currentIndex).css({ opacity: 1 });
 
-//   function showNextImageRight() {
-//     const nextIndex = (currentIndexRight + 1) % imagesRight.length;
-//     imagesRight.eq(currentIndexRight).animate({opacity: 0}, 500);
-//     imagesRight.eq(nextIndex).animate({opacity: 1}, 500);
-//     currentIndexRight = nextIndex;
-//   }
+    function showNextImage() {
+      const nextIndex = (currentIndex + 1) % images.length;
+      images.eq(currentIndex).animate({ opacity: 0 }, 1000);
+      images.eq(nextIndex).animate({ opacity: 1 }, 1000);
+      currentIndex = nextIndex;
+    }
 
-//   setInterval(showNextImageLeft, 3000);
-//   setInterval(showNextImageRight, 3000);
+    // 最初の画像を表示してから5秒後に次の画像に切り替える
+    setTimeout(function() {
+      showNextImage();
+      setInterval(showNextImage, 5000);
+    }, 5000);
+  }
+
+  // 各スライダーを初期化
+  setupImageSlider('.p-top__keyvisual');
+  setupImageSlider('.c-salonInfo__img');
 });
 
 
