@@ -329,6 +329,9 @@ $xl: 1200px;
       @include lg {
         font-size: 1.2em;
       }
+      @include md {
+        text-align: center;
+      }
     }
   }
   .p-title__container h2 span::before {
@@ -346,6 +349,8 @@ $xl: 1200px;
     }
     @include md {
       top: -100%;
+      left: 50%;
+      transform: translateX(-50%) rotate(-45deg);
     }
   }
   .p-title__container h2 span:after {
@@ -376,6 +381,9 @@ $xl: 1200px;
       width: 6.0rem;
       height: 6.0rem;
     }
+    @include md {
+      display: none;
+    }
     p {
       position: absolute;
       right: 0.7rem;
@@ -405,6 +413,58 @@ $xl: 1200px;
   }
   .c-btn p:hover {
     color: #FFFFFF;
+  }
+
+  /*MORE DETAILボタン*/
+  .c-btn__content--md {
+    margin: 0 auto;
+  }
+  .p-more__button{
+    display: none;
+    @include md {
+      display: inline-block;
+      width: 37%;
+      margin-top: 3%;
+      padding: 2% 8%;
+      border: 1px solid #333333;
+      background-color: #FFFFFF;
+      text-align: center;
+    }
+    @include sm {
+      width: 58%;
+      margin-top: 8%;
+      padding: 4% 10%;
+    }
+    .c-more__inner{
+      p{
+        position: relative;
+        font-family: "Poppins", sans-serif;
+        font-size: 0.95em;
+        letter-spacing: 0.1em;
+        line-height: 1.6;
+        text-align: left;
+        @include sm {
+          font-size: 0.85em;
+        }
+        br {
+          @include sm {
+            display: none;
+          }
+        }
+      }
+      p::after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -10%;
+        transform: translateY(-50%);
+        display: block;
+        width: 50%;
+        height: 100%;
+        background: url("../img/longArrow2.png") no-repeat center center;
+        background-size: contain;
+      }
+    }
   }
 
   #l-main__home{
@@ -533,6 +593,7 @@ $xl: 1200px;
         overflow: hidden;
         @include md {
           width: 100%;
+          height: 180px;
         }
         .c-concept__img{
           width: 100%;
@@ -590,6 +651,11 @@ $xl: 1200px;
             height: 14.0rem;
             background: repeating-linear-gradient(90deg, transparent, transparent 6px, rgba(51, 51, 51, 1) 6px, rgba(51, 51, 51, 1) 7px);
           }
+          @include md {
+            width: 5.5rem;
+            height: 5.5rem;
+            background: repeating-linear-gradient(90deg, transparent, transparent 5px, rgba(51, 51, 51, 1) 5px, rgba(51, 51, 51, 1) 6px);
+          }
         }
       }
       .p-concept__detail{
@@ -597,6 +663,9 @@ $xl: 1200px;
         margin-top: auto;
         margin-left: -5%;
         z-index: 1;
+        @include lg {
+          margin-left: 0;
+        }
         @include md {
           width: 100%;
           margin-top: 12%;
@@ -816,6 +885,9 @@ $xl: 1200px;
           bottom: 0;
           right: 0;
         }
+        .c-btn__content--md {
+          text-align: center;
+        }
       }
     }
   }
@@ -830,6 +902,9 @@ $xl: 1200px;
       height: 425px; /*画像反映したら修正*/
       @include lg {
         height: 350px;
+      }
+      @include md {
+        height: 200px;
       }
       .p-care__img{
         width: 100%;
@@ -850,6 +925,9 @@ $xl: 1200px;
         width: 100%;
         height: 100%;
         overflow: hidden; /* 擬似要素がはみ出さないようにする */
+        @include md {
+          display: none;
+        }
         .c-triming__top{
           position: absolute;
           top: 0;
@@ -886,6 +964,7 @@ $xl: 1200px;
 
       .p-salonInfo__container{
         display: flex;
+        flex-direction: row-reverse;
         @include md {
           display: block;
         }
@@ -917,6 +996,8 @@ $xl: 1200px;
           }
           @include md {
             width: 100%;
+            height: 180px;
+            margin-left: 0;
           }
           .c-slideImage {
             position: absolute;
@@ -978,14 +1059,21 @@ $xl: 1200px;
               height: 14.0rem;
               background: repeating-linear-gradient(180deg, transparent, transparent 6px, rgba(51, 51, 51, 1) 6px, rgba(51, 51, 51, 1) 7px);
             }
+            @include md {
+              width: 5.5rem;
+              height: 5.5rem;
+              background: repeating-linear-gradient(90deg, transparent, transparent 5px, rgba(51, 51, 51, 1) 5px, rgba(51, 51, 51, 1) 6px);
+            }
           }
         }
+        .c-btn__content{
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
       }
-      .c-btn__content{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        // text-align: right;
+      .c-btn__content--md {
+        text-align: center;
       }
     }
   }
@@ -1108,6 +1196,9 @@ $xl: 1200px;
         bottom: 0;
         right: 0;
       }
+      .c-btn__content--md {
+        text-align: center;
+      }
     }
 
 
@@ -1139,18 +1230,36 @@ $xl: 1200px;
         background-color: #FFFFFF;
         text-align: center;
         @include lg {
-          width: 19vw;
+          width: 22vw;
           margin-top: 3vh;
-          padding: 1.5% 0;
+          padding: 1.2% 0;
+        }
+        @include md {
+          width: 32vw;
+          margin-top: 5vh;
+          padding: 2% 0;
         }
         .c-reserve__inner{
           margin: 0 30%;
+          @include lg {
+            margin: 0 28%;
+          }
+          @include md {
+            margin: 0 25%;
+          }
           p{
             position: relative;
             font-family: "Poppins", sans-serif;
             font-size: 1.0em;
             letter-spacing: 0.1em;
             text-align: left;
+            @include lg {
+              font-size: 0.85em;
+              letter-spacing: 0.15em;
+            }
+            // @include md {
+            //   font-size: 0.85em;
+            // }
           }
           p::after{
             content: "";
@@ -1196,7 +1305,10 @@ $xl: 1200px;
             width: 100%;
             height: 175px; /*画像反映したら修正*/
             @include lg {
-              height: 40vh;
+              height: 280px;
+            }
+            @include md {
+              height: 180px;
             }
             .p-blog__img{
               width: 100%;
@@ -1358,24 +1470,25 @@ $xl: 1200px;
     }
     .l-main__arrow--sp {
       display: none;
-      @include lg {
+      @include sm {
+        display: block;
         width: 100%;
-        // margin: 0 auto;
-        // text-align: center;
-        // .c-scroll__img {
-        //   width: 30%;
-        //   margin: 0 auto;
-        //   img {
-        //     width: 100%;
-        //     transform: rotate(225deg);
-        //   }
-        //   span {
-        //     position: relative;
-        //     top: -1em;
-        //     font-family: "Open Sans", sans-serif;
-        //     font-size: 0.7em;
-        //   }
-        // }
+        margin: 0 auto;
+        text-align: center;
+        .c-scroll__img {
+          width: 10%;
+          margin: 0 auto;
+          img {
+            width: 100%;
+            transform: rotate(225deg);
+          }
+        }
+        span {
+          position: relative;
+          top: -1em;
+          font-family: "Open Sans", sans-serif;
+          font-size: 0.7em;
+        }
       }
     }
   }/*#l-main__retur閉じる*/
