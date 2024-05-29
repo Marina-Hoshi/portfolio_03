@@ -740,7 +740,7 @@ $xl: 1200px;
           @include md {
             display: block;
             width: 60%;
-            margin-top: 10%;
+            margin: 8% 0;
           }
           li {
             position: relative;
@@ -749,9 +749,9 @@ $xl: 1200px;
             margin: 0 0 6% 6%;
             padding: 11%;
             @include md {
-              margin: 0 0 10% 0;
+              margin: 0 0 15% 0;
               width: 100%;
-              padding: 31%;
+              padding: 40% 30%;
             }
             .p-menu__boxShadow{
               position: absolute;
@@ -985,6 +985,7 @@ $xl: 1200px;
           z-index: 1;
           @include md {
             width: 100%;
+            margin-top: 12%;
             text-align: center;
           }
           .p-salonInfo__text{
@@ -1100,109 +1101,134 @@ $xl: 1200px;
     .p-style__container{
       position: relative;
       height: 100%;
-      ul{
-        display: flex;
-        height: 100%;
-        li{
-          width: 20%;
-        }
-        .c-style__triangle:first-child{
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 7.65rem;
-          z-index: 2;
-          .c-triangle__blue{
-            position: relative;
-            width: 7.65rem;
-            height: 7.65rem;
-            aspect-ratio: 1;
-            clip-path: polygon(0 0, 100% 0, 0 100%);
-            border: 1px solid #DBE9F2;
-            background: linear-gradient(45deg,#DBE9F2, #DBE9F2);
-          }
-        }
-        .c-style__title{
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 1;
-          .c-title__container{
-            position: relative;
-            width: 15.3rem;
-            height: 15.3rem;
-            aspect-ratio: 1;
-            clip-path: polygon(0 0, 100% 0, 0 100%);
-            border: 1px solid #FFFFFF;
-            background: linear-gradient(45deg,#FFFFFF, #FFFFFF);
-            p {
-              display: inline-block; /* 傾けたテキストが改行されないようにするため */
-              transform: rotate(-45deg);
-              margin: 25% 0 0 32%;
-            }
-          }
-        }
-        .c-style__skew{
-          // position: relative;
-          transform: skewX(-45deg);
-          transform-origin: bottom left;
-          .c-skew__mask {
-            overflow: hidden;
-            img {
-              // position: absolute;
-              // top: 0;
-              // right: -50%;
-              min-width: 117.6%;
-              height: 244.8px;
-              transform: skewX(45deg);
-              transform-origin: bottom left;
-              // object-fit: cover;
-            }
-          }
-        }
-        .c-style__skew:nth-of-type(5){
-          background-color: #DBE9F2;
-        }
-        .c-style__stripe {
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          width: 15.3rem;
-          height: 15.3rem;
-          aspect-ratio: 1;
-          clip-path: polygon(0 100%,100% 0,100% 100%);
-          background: repeating-linear-gradient(90deg, transparent, transparent 12px, rgba(51, 51, 51, 1) 12px, rgba(51, 51, 51, 1) 15px);
-          .c-style__skew--thin {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            width: 14.3rem;
-            height: 14.3rem;
-            aspect-ratio: 1;
-            clip-path: polygon(0 100%,100% 0,100% 100%);
-            border: 1px solid #FFFFFF;
-            background: linear-gradient(45deg,#FFFFFF, #FFFFFF);
-          }
-        }
-        .c-style__triangle:last-child{
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          width: 7.65rem;
-          // .c-triangle__blue{
-          //   position: relative;
-          //   width: 7.65rem;
-          //   height: 7.65rem;
-          //   aspect-ratio: 1;
-          //   clip-path: polygon(0 0, 100% 0, 0 100%);
-          //   border: 1px solid #DBE9F2;
-          //   background: linear-gradient(45deg,#DBE9F2, #DBE9F2);
-          // }
+      // ul{
+      //   display: flex;
+      //   height: 100%;
+      //   li{
+      //     width: 20%;
+      //   }
+      //   .c-style__triangle:first-child{
+      //     position: absolute;
+      //     top: 0;
+      //     left: 0;
+      //     width: 7.65rem;
+      //     z-index: 2;
+      //     .c-triangle__blue{
+      //       position: relative;
+      //       width: 7.65rem;
+      //       height: 7.65rem;
+      //       aspect-ratio: 1;
+      //       clip-path: polygon(0 0, 100% 0, 0 100%);
+      //       border: 1px solid #DBE9F2;
+      //       background: linear-gradient(45deg,#DBE9F2, #DBE9F2);
+      //     }
+      //   }
+      //   .c-style__title{
+      //     position: absolute;
+      //     top: 0;
+      //     left: 0;
+      //     z-index: 1;
+      //     .c-title__container{
+      //       position: relative;
+      //       width: 15.3rem;
+      //       height: 15.3rem;
+      //       aspect-ratio: 1;
+      //       clip-path: polygon(0 0, 100% 0, 0 100%);
+      //       border: 1px solid #FFFFFF;
+      //       background: linear-gradient(45deg,#FFFFFF, #FFFFFF);
+      //       p {
+      //         position: relative;
+      //         display: inline-block; /* 傾けたテキストが改行されないようにするため */
+      //         transform: rotate(-45deg);
+      //         margin: 25% 0 0 28%;
+      //         font-family: "Open Sans", sans-serif;
+      //         font-weight: 700;
+      //         font-size: 1.3em;
+      //         letter-spacing: 0.2em;
+      //       }
+      //       p::before {
+      //         content: "";
+      //         position: absolute;
+      //         top: 0;
+      //         left: -50%;
+      //         width: 1.2em;
+      //         height: 100%;
+      //         background-repeat: no-repeat;
+      //         background: url("../img/scissors2.png") no-repeat center center;
+      //         background-size: contain;
+      //         transform: rotate(-45deg);
+      //       }
+      //     }
+      //   }
+      //   .c-style__skew{
+      //     // position: relative;
+      //     transform: skewX(-45deg);
+      //     transform-origin: bottom left;
+      //     .c-skew__mask {
+      //       overflow: hidden;
+      //       img {
+      //         // position: absolute;
+      //         // top: 0;
+      //         // right: -50%;
+      //         min-width: 117.6%;
+      //         height: 244.8px;
+      //         transform: skewX(45deg);
+      //         transform-origin: bottom left;
+      //         object-position: 0px 1px;
+      //         object-fit: cover;
+      //       }
+      //     }
+      //   }
+      //   .c-style__skew:nth-of-type(5){
+      //     background-color: #DBE9F2;
+      //   }
+      //   .c-style__stripe {
+      //     position: absolute;
+      //     bottom: 0;
+      //     right: 0;
+      //     width: 15.3rem;
+      //     height: 15.3rem;
+      //     aspect-ratio: 1;
+      //     clip-path: polygon(0 100%,100% 0,100% 100%);
+      //     background: repeating-linear-gradient(90deg, transparent, transparent 12px, rgba(51, 51, 51, 1) 12px, rgba(51, 51, 51, 1) 15px);
+      //     .c-style__skew--thin {
+      //       position: absolute;
+      //       bottom: 0;
+      //       right: 0;
+      //       width: 100%;
+      //       height: 100%;
+      //       width: 14.3rem;
+      //       height: 14.3rem;
+      //       aspect-ratio: 1;
+      //       clip-path: polygon(0 100%,100% 0,100% 100%);
+      //       border: 1px solid #FFFFFF;
+      //       background: linear-gradient(45deg,#FFFFFF, #FFFFFF);
+      //     }
+      //   }
+      //   .c-style__triangle:last-child{
+      //     position: absolute;
+      //     bottom: 0;
+      //     right: 0;
+      //     width: 7.65rem;
+      //     // .c-triangle__blue{
+      //     //   position: relative;
+      //     //   width: 7.65rem;
+      //     //   height: 7.65rem;
+      //     //   aspect-ratio: 1;
+      //     //   clip-path: polygon(0 0, 100% 0, 0 100%);
+      //     //   border: 1px solid #DBE9F2;
+      //     //   background: linear-gradient(45deg,#DBE9F2, #DBE9F2);
+      //     // }
+      //   }
+      // }
+      .c-style__catalog {
+        position: absolute;
+        top: 0;
+        img {
+          width: 100%;
+          height: auto;
         }
       }
-
       .c-btn__content{
         position: absolute;
         bottom: 0;
@@ -1498,7 +1524,7 @@ $xl: 1200px;
         margin: 0 auto;
         text-align: center;
         .c-scroll__img {
-          width: 10%;
+          width: 6%;
           margin: 0 auto;
           img {
             width: 100%;
@@ -1507,9 +1533,9 @@ $xl: 1200px;
         }
         span {
           position: relative;
-          top: -1em;
+          top: -2em;
           font-family: "Open Sans", sans-serif;
-          font-size: 0.7em;
+          font-size: 8.8px;
         }
       }
     }
@@ -1553,11 +1579,20 @@ $xl: 1200px;
           font-weight: 600;
           letter-spacing: 0.12em;
           line-height: 1;
+          @include xl {
+            font-size: 0.88em;
+          }
+          @include lg {
+            font-size: 0.8em;
+          }
         }
         .p-info__contents{
           .p-info__address{
-            font-size: 14px;
+            font-size: 0.88em;
             line-height: 2.0em;
+            @include lg {
+              font-size: 0.7em;
+            }
             p {
               margin-bottom: 1%;
             }
@@ -1579,6 +1614,9 @@ $xl: 1200px;
           .p-times__day{
             margin-bottom: 3%;
             font-size: 0.88em;
+            @include lg {
+              font-size: 0.7em;
+            }
           }
         }
         .p-reserve__contents{
@@ -1595,7 +1633,7 @@ $xl: 1200px;
               display: flex;
               justify-content: center;
               gap: 5%;
-              width: 60%;
+              width: 80%;
               margin: 0 auto;
               .c-tel__icon {
                 .fa-solid fa-phone {
@@ -1614,6 +1652,11 @@ $xl: 1200px;
               margin-bottom: 0;
               font-size: 1.0em;
               font-weight: 600;
+              letter-spacing: 0.13em;
+              white-space: nowrap;
+              @include lg {
+                font-size: 0.8em;
+              }
             }
             .c-reserve__inner:hover {
               filter: invert(1) brightness(2);
@@ -1628,6 +1671,9 @@ $xl: 1200px;
             border-bottom: 1px solid #666666;
             font-size: 0.78em;
             line-height: 2.0;
+            @include lg {
+              font-size: 8.8px;
+            }
           }
           .p-footer__contact:hover{
             opacity: 0.5;
@@ -1635,7 +1681,11 @@ $xl: 1200px;
         }
           .p-reserve__contents p{
             margin-bottom: 5%;
-            font-size: 0.9em;
+            font-size: 0.88em;
+            @include lg {
+              font-size: 0.7em;
+              line-height: 1.8em;
+            }
           }
       }
 
@@ -1647,6 +1697,9 @@ $xl: 1200px;
           font-size: 0.7em;
           @include lg {
             font-size: 0.5em;
+          }
+          @include md {
+            font-size: 8.8px;
           }
         }
       }
