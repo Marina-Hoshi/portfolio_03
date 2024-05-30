@@ -152,6 +152,12 @@ $xl: 1200px;
         width: 20%;
         height: 2%;
       }
+      @include md {
+        top: 23%;
+      }
+      @include sm {
+        top: 21.5%;
+      }
     }
     // ×ハンバーガーメニュー
     #p-drawer__toggle--sp{
@@ -233,20 +239,25 @@ $xl: 1200px;
         position: absolute;
         top: 0;
         width: 100%;
-        padding: 10% 0;
-        height: calc(100vh - 20%); /*画面いっぱいの高さ*/
+        padding: 8% 0;
+        height: calc(100vh - 16%); /*画面いっぱいの高さ*/
         background-color: #DBE9F2;
         z-index: 1;
       }
-        @include md {
-          padding: 20% 0;
-          height: calc(100vh - 40%);
-        }
+      @include md {
+        padding: 7% 0;
+        height: calc(100vh - 14%);
+      }
+      @include sm {
+        padding: 10% 0;
+        height: calc(100vh - 20%);
+      }
+
       .c-header__title--sp{
         display: none;
         @include lg {
           display: block;
-          width: 20%;
+          width: 30%;
           height: auto;
           margin: 0 auto;
           text-align: center;
@@ -263,7 +274,7 @@ $xl: 1200px;
         display: none;
         @include lg {
           display: grid;
-          margin-top: 4.5rem;
+          margin-top: 5.5rem;
           text-align: center;
         }
         li{
@@ -1124,14 +1135,19 @@ $xl: 1200px;
 
   #l-main__style{
     width: 90vw;
-    height: 245.6px;
+    // height: 245.6px;
+    height: auto;
     margin: 0 auto;
     margin-bottom: 9%;
   }
 
     .p-style__container{
-      position: relative;
+      display: flex;
+      // position: relative;
       height: 100%;
+      @include md {
+        display: block;
+      }
       // ul{
       //   display: flex;
       //   height: 100%;
@@ -1253,20 +1269,50 @@ $xl: 1200px;
       //   }
       // }
       .c-style__catalog {
-        position: absolute;
-        top: 0;
+        display: flex;
+        margin: 0 auto;
+        // position: absolute;
+        // top: 0;
         img {
           width: 100%;
           height: auto;
         }
       }
       .c-btn__content{
-        position: absolute;
-        bottom: 0;
-        right: 0;
+        // position: absolute;
+        // bottom: 0;
+        // right: 0;
+        margin-top: auto;
+        margin-left: -8em;
+        @include xl {
+          margin-left: -6em;
+        }
+        @include lg {
+          margin-left: -5em;
+        }
+        .c-btn {
+          @include lg {
+            width: 5rem;
+            height: 5rem;
+          }
+          p{
+            @include lg {
+              position: absolute;
+              right: 0.4rem;
+              bottom: 0.4rem;
+              font-size: 0.7em;
+            }
+          }
+        }
       }
       .c-btn__content--md {
-        text-align: center;
+        display: none;
+        @include md {
+          display: block;
+          width: 98%;
+          margin-top: 7%;
+          text-align: center;
+        }
       }
     }
 
@@ -1366,6 +1412,22 @@ $xl: 1200px;
         @include lg {
           width: 100%;
           margin-bottom: 12%;
+        }
+        .p-title__container{
+          h2{
+            @include md {
+              margin-bottom: -6%;
+              margin-left: -3%;
+              z-index: 1;
+              text-align: left;
+            }
+          }
+          h2 span::before {
+            @include md {
+              top: -75%;
+              left: 4%;
+            }
+          }
         }
         .p-blog__imgBox{
           width: 100%;
