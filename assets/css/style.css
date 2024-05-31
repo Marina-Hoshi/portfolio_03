@@ -129,7 +129,7 @@
 }
 @media screen and (max-width: 978px) {
   .l-wrapper .l-header__inner #p-drawer__toggle--sp {
-    position: absolute;
+    position: fixed;
     right: 50px;
     top: 40px;
     width: 25px;
@@ -1360,6 +1360,7 @@
   width: 85vw;
   margin: 0 auto;
   margin-bottom: 9%;
+  padding-top: 3%;
   /*h2タイトル*/
   /*長方形MOREボタン*/
   /*BLOG&NEWSセクション*/
@@ -1453,6 +1454,12 @@
 @media screen and (max-width: 978px) {
   .l-wrapper .l-main #l-main__blogNews .l-blogNews__container {
     display: block;
+    padding-top: 3%;
+  }
+}
+@media screen and (max-width: 760px) {
+  .l-wrapper .l-main #l-main__blogNews .l-blogNews__container {
+    padding-top: 5%;
   }
 }
 .l-wrapper .l-main #l-main__blogNews .l-blogNews__container .l-main__blog {
@@ -1464,7 +1471,7 @@
     margin-bottom: 12%;
   }
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 978px) {
   .l-wrapper .l-main #l-main__blogNews .l-blogNews__container .l-main__blog .p-title__container h2 {
     margin-bottom: -6%;
     margin-left: -3%;

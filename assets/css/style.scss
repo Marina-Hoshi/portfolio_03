@@ -163,7 +163,7 @@ $xl: 1200px;
     // ×ハンバーガーメニュー
     #p-drawer__toggle--sp{
       @include lg {
-        position: absolute;
+        position: fixed;
         right: 50px;
         top: 40px;
         width: 25px;
@@ -1393,6 +1393,7 @@ $xl: 1200px;
     width: 85vw;
     margin: 0 auto;
     margin-bottom: 9%;
+    padding-top: 3%;
     @include lg {
       margin-bottom: 12%;
     }
@@ -1477,6 +1478,10 @@ $xl: 1200px;
       justify-content: space-between;
       @include lg {
         display: block;
+        padding-top: 3%;
+      }
+      @include md {
+        padding-top: 5%;
       }
 
       .l-main__blog{
@@ -1487,7 +1492,7 @@ $xl: 1200px;
         }
         .p-title__container{
           h2{
-            @include md {
+            @include lg {
               margin-bottom: -6%;
               margin-left: -3%;
               z-index: 1;
