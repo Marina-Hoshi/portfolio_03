@@ -124,22 +124,7 @@
 }
 @media screen and (max-width: 978px) {
   .l-wrapper .l-header__inner nav::before {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20%;
-    height: 2%;
-  }
-}
-@media screen and (max-width: 760px) {
-  .l-wrapper .l-header__inner nav::before {
-    top: 23%;
-  }
-}
-@media screen and (max-width: 478px) {
-  .l-wrapper .l-header__inner nav::before {
-    top: 21.5%;
+    content: none;
   }
 }
 @media screen and (max-width: 978px) {
@@ -235,22 +220,10 @@
     position: absolute;
     top: 0;
     width: 100%;
-    padding: 8% 0;
-    height: calc(100vh - 16%); /*画面いっぱいの高さ*/
+    padding: 10vh 0;
+    height: 80vh;
     background-color: #DBE9F2;
-    z-index: 1;
-  }
-}
-@media screen and (max-width: 760px) {
-  .l-wrapper .l-header__inner .p-nav__container--sp {
-    padding: 7% 0;
-    height: calc(100vh - 14%);
-  }
-}
-@media screen and (max-width: 478px) {
-  .l-wrapper .l-header__inner .p-nav__container--sp {
-    padding: 10% 0;
-    height: calc(100vh - 20%);
+    z-index: 100;
   }
 }
 .l-wrapper .l-header__inner .p-nav__container--sp .c-header__title--sp {
@@ -258,9 +231,10 @@
 }
 @media screen and (max-width: 978px) {
   .l-wrapper .l-header__inner .p-nav__container--sp .c-header__title--sp {
+    position: relative;
     display: block;
     width: 30%;
-    height: auto;
+    height: 15vh;
     margin: 0 auto;
     text-align: center;
   }
@@ -272,13 +246,31 @@
     font-weight: 100;
   }
 }
+.l-wrapper .l-header__inner .p-nav__container--sp .c-header__title--sp::after {
+  display: none;
+}
+@media screen and (max-width: 978px) {
+  .l-wrapper .l-header__inner .p-nav__container--sp .c-header__title--sp::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 2%;
+    margin-top: -3%;
+    content: "";
+    background-image: repeating-linear-gradient(135deg, transparent, transparent 7px, #333333 7px, #333333 8px);
+    background-size: 10px 10px; /* ストライプの間隔を均一にする */
+  }
+}
 .l-wrapper .l-header__inner .p-nav__container--sp .p-nav__menu--sp {
   display: none;
 }
 @media screen and (max-width: 978px) {
   .l-wrapper .l-header__inner .p-nav__container--sp .p-nav__menu--sp {
     display: grid;
-    margin-top: 5.5rem;
+    height: 50vh;
     text-align: center;
   }
 }
@@ -288,7 +280,6 @@
 @media screen and (max-width: 978px) {
   .l-wrapper .l-header__inner .p-nav__container--sp .p-nav__menu--sp li {
     display: inline-block;
-    margin: 1% 0;
     font-family: "Poppins", sans-serif;
     font-size: 0.95em;
     font-weight: 600;
@@ -302,6 +293,7 @@
     display: flex;
     justify-content: space-between;
     width: 7%;
+    height: 5vh;
     margin: 0 auto;
     margin-top: 2%;
   }
@@ -309,11 +301,6 @@
 @media screen and (max-width: 760px) {
   .l-wrapper .l-header__inner .p-nav__container--sp .p-subNav__menu--sp {
     width: 10%;
-  }
-}
-@media screen and (max-width: 478px) {
-  .l-wrapper .l-header__inner .p-nav__container--sp .p-subNav__menu--sp {
-    margin-bottom: 4%;
   }
 }
 @media screen and (max-width: 978px) {
@@ -333,6 +320,7 @@
   .l-wrapper .l-header__inner .p-nav__container--sp .p-tel__container--sp {
     display: block;
     width: 40%;
+    height: auto;
     margin: 0 auto;
     padding: 1% 0;
     border: 1px solid #333333;
@@ -631,6 +619,61 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  font-family: "Ubuntu", sans-serif;
+  text-align: right;
+}
+@media screen and (max-width: 760px) {
+  .l-wrapper .l-main #l-main__home .p-home__container .p-home__tag {
+    bottom: -16%;
+  }
+}
+@media screen and (max-width: 478px) {
+  .l-wrapper .l-main #l-main__home .p-home__container .p-home__tag {
+    bottom: -18%;
+  }
+}
+.l-wrapper .l-main #l-main__home .p-home__container .p-home__tag .c-home__tagTitle {
+  margin-bottom: 5%;
+  font-size: 1.1em;
+  letter-spacing: 0.2em;
+}
+@media screen and (max-width: 978px) {
+  .l-wrapper .l-main #l-main__home .p-home__container .p-home__tag .c-home__tagTitle {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 760px) {
+  .l-wrapper .l-main #l-main__home .p-home__container .p-home__tag .c-home__tagTitle {
+    margin-bottom: 8%;
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 478px) {
+  .l-wrapper .l-main #l-main__home .p-home__container .p-home__tag .c-home__tagTitle {
+    margin-bottom: 2%;
+    font-size: 0.8em;
+    letter-spacing: 0.15em;
+  }
+}
+.l-wrapper .l-main #l-main__home .p-home__container .p-home__tag .c-home__tagText {
+  margin-bottom: 5%;
+  font-size: 0.7em;
+  line-height: 1.8em;
+}
+@media screen and (max-width: 978px) {
+  .l-wrapper .l-main #l-main__home .p-home__container .p-home__tag .c-home__tagText {
+    font-size: 0.6em;
+  }
+}
+@media screen and (max-width: 760px) {
+  .l-wrapper .l-main #l-main__home .p-home__container .p-home__tag .c-home__tagText {
+    font-size: 0.4em;
+  }
+}
+@media screen and (max-width: 478px) {
+  .l-wrapper .l-main #l-main__home .p-home__container .p-home__tag .c-home__tagText {
+    font-size: 9px;
+  }
 }
 .l-wrapper .l-main #l-main__home .p-home__container .p-scroll__content {
   position: absolute;
@@ -802,7 +845,7 @@
 }
 @media screen and (max-width: 760px) {
   .l-wrapper .l-main #l-main__concept .p-concept__container .p-concept__detail .p-concept__text {
-    margin: 3% 0 5% 0;
+    margin: 3% 0;
     font-size: 0.8em;
   }
 }
@@ -1117,11 +1160,25 @@
   margin: 30% 0 10% 0;
   font-family: "Open Sans", sans-serif;
   font-size: 0.9em;
+  line-height: 3em;
+  white-space: nowrap;
+}
+@media screen and (max-width: 978px) {
+  .l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__detail .p-salonInfo__text {
+    margin: 25% 0 10% 0;
+    font-size: 0.8em;
+  }
 }
 @media screen and (max-width: 760px) {
   .l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__detail .p-salonInfo__text {
-    margin: 3% 0 5% 0;
+    margin: 3% 0;
     font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 478px) {
+  .l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__detail .p-salonInfo__text {
+    font-size: 0.6em;
+    line-height: 2.5em;
   }
 }
 .l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__imgBox {

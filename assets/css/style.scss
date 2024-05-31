@@ -145,19 +145,20 @@ $xl: 1200px;
       background-image: repeating-linear-gradient(135deg, transparent, transparent 7px, #333333 7px, #333333 8px );
       background-size: 10px 10px; /* ストライプの間隔を均一にする */
       @include lg {
-        position: absolute;
-        top: 25%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 20%;
-        height: 2%;
+        content: none;
+        // position: absolute;
+        // top: 20%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
+        // width: 20%;
+        // height: 2%;
       }
-      @include md {
-        top: 23%;
-      }
-      @include sm {
-        top: 21.5%;
-      }
+      // @include md {
+      //   top: 23%;
+      // }
+      // @include sm {
+      //   top: 21.5%;
+      // }
     }
     // ×ハンバーガーメニュー
     #p-drawer__toggle--sp{
@@ -239,26 +240,27 @@ $xl: 1200px;
         position: absolute;
         top: 0;
         width: 100%;
-        padding: 8% 0;
-        height: calc(100vh - 16%); /*画面いっぱいの高さ*/
+        padding: 10vh 0;
+        height: 80vh;
         background-color: #DBE9F2;
-        z-index: 1;
+        z-index: 100;
       }
-      @include md {
-        padding: 7% 0;
-        height: calc(100vh - 14%);
-      }
-      @include sm {
-        padding: 10% 0;
-        height: calc(100vh - 20%);
-      }
+      // @include md {
+      //   padding: 7% 0;
+      //   height: calc(100vh - 14%);
+      // }
+      // @include sm {
+      //   padding: 10% 0;
+      //   height: calc(100vh - 20%);
+      // }
 
       .c-header__title--sp{
         display: none;
         @include lg {
+          position: relative;
           display: block;
           width: 30%;
-          height: auto;
+          height: 15vh;
           margin: 0 auto;
           text-align: center;
         }
@@ -270,18 +272,33 @@ $xl: 1200px;
           }
         }
       }
+      .c-header__title--sp::after{
+        display: none;
+        @include lg {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 50%;
+          height: 2%;
+          margin-top: -3%;
+          content: '';
+          background-image: repeating-linear-gradient(135deg, transparent, transparent 7px, #333333 7px, #333333 8px );
+          background-size: 10px 10px; /* ストライプの間隔を均一にする */
+        }
+      }
       .p-nav__menu--sp{
         display: none;
         @include lg {
           display: grid;
-          margin-top: 5.5rem;
+          height: 50vh;
           text-align: center;
         }
         li{
           display: none;
           @include lg {
             display: inline-block;
-            margin: 1% 0;
             font-family: "Poppins", sans-serif;
             font-size: 0.95em;
             font-weight: 600;
@@ -294,15 +311,16 @@ $xl: 1200px;
           display: flex;
           justify-content: space-between;
           width: 7%;
+          height: 5vh;
           margin: 0 auto;
           margin-top: 2%;
         }
         @include md {
           width: 10%;
         }
-        @include sm {
-          margin-bottom: 4%;
-        }
+        // @include sm {
+        //   margin-bottom: 4%;
+        // }
         li{
           @include lg {
             width: auto;
@@ -319,6 +337,7 @@ $xl: 1200px;
         @include sm {
           display: block;
           width: 40%;
+          height: auto;
           margin: 0 auto;
           padding: 1% 0;
           border: 1px solid #333333;
@@ -589,6 +608,44 @@ $xl: 1200px;
         position: absolute;
         bottom: 0;
         right: 0;
+        font-family: "Ubuntu", sans-serif;
+        text-align: right;
+        @include md {
+          bottom: -16%;
+        }@include sm {
+          bottom: -18%;
+        }
+        .c-home__tagTitle{
+          margin-bottom: 5%;
+          font-size: 1.1em;
+          letter-spacing: 0.2em;
+          @include lg {
+            font-size: 1.0em;
+          }
+          @include md {
+            margin-bottom: 8%;
+            font-size: 0.9em;
+          }
+          @include sm {
+            margin-bottom: 2%;
+            font-size: 0.8em;
+            letter-spacing: 0.15em;
+          }
+        }
+        .c-home__tagText{
+          margin-bottom: 5%;
+          font-size: 0.7em;
+          line-height: 1.8em;
+          @include lg {
+            font-size: 0.6em;
+          }
+          @include md {
+            font-size: 0.4em;
+          }
+          @include sm {
+            font-size: 9px;
+          }
+        }
       }
       .p-scroll__content{
         position: absolute;
@@ -739,7 +796,7 @@ $xl: 1200px;
             font-size: 0.9em;
           }
           @include md {
-            margin: 3% 0 5% 0;
+            margin: 3% 0;
             font-size: 0.8em;
           }
         }
@@ -1034,9 +1091,19 @@ $xl: 1200px;
             margin: 30% 0 10% 0;
             font-family: "Open Sans", sans-serif;
             font-size: 0.9em;
+            line-height: 3.0em;
+            white-space: nowrap;
+            @include lg {
+              margin: 25% 0 10% 0;
+              font-size: 0.8em;
+            }
             @include md {
-              margin: 3% 0 5% 0;
+              margin: 3% 0;
               font-size: 0.7em;
+            }
+            @include sm {
+              font-size: 0.6em;
+              line-height: 2.5em;
             }
           }
         }
