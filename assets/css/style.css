@@ -557,6 +557,11 @@
   margin: 0 auto;
   margin-bottom: 12%;
 }
+@media screen and (max-width: 760px) {
+  .l-wrapper .l-main #l-main__home {
+    margin-bottom: 15%;
+  }
+}
 .l-wrapper .l-main #l-main__home .p-home__container {
   position: relative;
   width: 100%;
