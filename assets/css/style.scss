@@ -47,6 +47,9 @@ body.loading {
   align-items: center;
   background-color: #FFFFFF;
   z-index: 9999;
+  @include sm {
+    height: 435px;
+  }
 }
 
 #loading-box {
@@ -635,6 +638,9 @@ body.loading {
     margin-bottom: 12%;
     @include md {
       margin-bottom: 15%;
+    }
+    @include sm {
+      margin-bottom: 65px;
     }
 
     .p-home__container{

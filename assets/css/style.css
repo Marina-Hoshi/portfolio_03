@@ -15,6 +15,11 @@ body.loading {
   background-color: #FFFFFF;
   z-index: 9999;
 }
+@media screen and (max-width: 478px) {
+  #loading-screen {
+    height: 435px;
+  }
+}
 
 #loading-box {
   width: 90vw;
@@ -663,6 +668,11 @@ body.loading {
 @media screen and (max-width: 760px) {
   .l-wrapper .l-main #l-main__home {
     margin-bottom: 15%;
+  }
+}
+@media screen and (max-width: 478px) {
+  .l-wrapper .l-main #l-main__home {
+    margin-bottom: 65px;
   }
 }
 .l-wrapper .l-main #l-main__home .p-home__container {
