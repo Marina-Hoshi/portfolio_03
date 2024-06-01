@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-// $xs: px;
 $sm: 478px;
 $md: 760px;
 $lg: 978px;
@@ -61,9 +60,9 @@ body.loading {
 
 .loading-rectangle {
   width: 200vw; /* 画面の横幅を超えるように設定 */
-  height: 415px; /* 画面の高さいっぱいに設定 */
-  background-color: #656733; /* 黄緑の背景色 */
-  position: relative; /* 相対位置に配置 */
+  height: 415px;
+  background-color: #909c6d;
+  position: relative;
   top: 145px;
   left: -50vw;
   transition: left 2s ease;
@@ -85,7 +84,6 @@ body.loading {
   left: 0;
   transition: 1.5s ease;
 }
-
 
 .loading-rectangle::before,
 .loading-rectangle::after {
@@ -127,7 +125,6 @@ body.loading {
 }
 
 
-
   .l-wrapper{
   width: 100%;
   height: auto;
@@ -167,9 +164,6 @@ body.loading {
     }
 
     .c-header__title--pc{
-      // position: absolute;
-      // top: 120px;
-      // left: 10%;
       width: 15vw;
       height: auto;
       margin-right: auto;
@@ -178,11 +172,6 @@ body.loading {
         height: auto;
         margin-top: 2%;
         margin-left: 5%;
-      //   left: 50%;
-      //   transform: translate(-50%, -50%);
-      //   width: 20%;
-      //   height: auto;
-      //   text-align: center;
       }
       h1{
         font-family: "Ubuntu", sans-serif;
@@ -219,7 +208,7 @@ body.loading {
           font-size: 0.75em;
           font-weight: 600;
           border-bottom: 1px solid transparent; /* 初期状態を透明に */
-          transition: border-bottom 0.4s ease; /* border-bottom に対するトランジションを設定 */
+          transition: border-bottom 0.4s ease;
           cursor: pointer; /* 常にポインタにする */
           @include lg {
             display: none;
@@ -242,20 +231,9 @@ body.loading {
       background-size: 10px 10px; /* ストライプの間隔を均一にする */
       @include lg {
         content: none;
-        // position: absolute;
-        // top: 20%;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
-        // width: 20%;
-        // height: 2%;
       }
-      // @include md {
-      //   top: 23%;
-      // }
-      // @include sm {
-      //   top: 21.5%;
-      // }
     }
+
     // ×ハンバーガーメニュー
     #p-drawer__toggle--sp{
       @include lg {
@@ -333,7 +311,7 @@ body.loading {
     .p-nav__container--sp {
       display: none;
       @include lg {
-        position: absolute;
+        position: fixed;
         top: 0;
         width: 100%;
         padding: 10vh 0;
@@ -341,14 +319,6 @@ body.loading {
         background-color: #DBE9F2;
         z-index: 100;
       }
-      // @include md {
-      //   padding: 7% 0;
-      //   height: calc(100vh - 14%);
-      // }
-      // @include sm {
-      //   padding: 5% 0;
-      //   height: calc(100vh - 10%);
-      // }
 
       .c-header__title--sp{
         display: none;
@@ -395,6 +365,9 @@ body.loading {
           display: grid;
           height: 50vh;
           text-align: center;
+        }
+        @include sm {
+          height: 45vh;
         }
         li{
           display: none;
@@ -761,8 +734,6 @@ body.loading {
         text-align: right;
         @include md {
           bottom: -16%;
-        }@include sm {
-          bottom: -18%;
         }
         .c-home__tagTitle{
           margin-bottom: 5%;
@@ -793,6 +764,8 @@ body.loading {
           }
           @include sm {
             font-size: 9px;
+            letter-spacing: 0.08em;
+            line-height: 1.6em;
           }
         }
       }
@@ -872,7 +845,7 @@ body.loading {
           left: 0;
           width: 100%;
           height: 100%;
-          overflow: hidden; /* 擬似要素がはみ出さないようにする */
+          overflow: hidden;
           .c-triming__top{
             position: absolute;
             top: 0;
@@ -1067,7 +1040,6 @@ body.loading {
             background-repeat: no-repeat;
             background: url("../img/menu_left_scissors.PNG") no-repeat center center;
             background-size: contain;
-            // transform: rotate(135deg);
             z-index: 2;
           }
           li::after {
@@ -1106,7 +1078,6 @@ body.loading {
             height: 10%;
             background: url("../img/menu_right_scissors.PNG") no-repeat center center;
             background-size: contain;
-            // transform: rotate(45deg);
             z-index: 2;
           }
           .p-menu__pseudo::after {
@@ -1155,7 +1126,7 @@ body.loading {
     .p-care__container{
       position: relative;
       width: 100%;
-      height: 425px; /*画像反映したら修正*/
+      height: 425px;
       @include lg {
         height: 350px;
       }
@@ -1168,7 +1139,6 @@ body.loading {
       .p-care__img{
         width: 100%;
         height: 100%;
-        // height: 606px;
         img {
           display: block;
           width: 100%;
@@ -1183,7 +1153,7 @@ body.loading {
         left: 0;
         width: 100%;
         height: 100%;
-        overflow: hidden; /* 擬似要素がはみ出さないようにする */
+        overflow: hidden;
         @include md {
           display: none;
         }
@@ -1290,7 +1260,7 @@ body.loading {
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden; /* 擬似要素がはみ出さないようにする */
+            overflow: hidden;
             .c-triming__top{
               position: absolute;
               top: 0;
@@ -1351,7 +1321,6 @@ body.loading {
 
   #l-main__style{
     width: 90vw;
-    // height: 245.6px;
     height: auto;
     margin: 0 auto;
     margin-bottom: 9%;
@@ -1359,7 +1328,6 @@ body.loading {
 
     .p-style__container{
       display: flex;
-      // position: relative;
       height: 100%;
       @include md {
         display: block;
@@ -1487,17 +1455,54 @@ body.loading {
       .c-style__catalog {
         display: flex;
         margin: 0 auto;
-        // position: absolute;
-        // top: 0;
-        img {
+        position: relative;
+        .c-catalog {
           width: 100%;
           height: auto;
+          @include md {
+            display: none;
+          }
+        }
+        .c-catalog__md {
+          display: none;
+          @include md {
+            display: block;
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 1;
+          }
+          @include sm {
+            display: none;
+          }
+        }
+        .c-catalog__sm {
+          display: none;
+          @include sm {
+            display: block;
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 1;
+          }
+        }
+      }
+      .c-style__catalog::before{
+        display: none;
+        @include md {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 5.0rem;
+          height: 5.0rem;
+          clip-path: polygon(100% 0, 0 100%, 100% 100%);
+          background: repeating-linear-gradient(90deg, transparent, transparent 3px, rgb(51, 51, 51) 3px, rgb(51, 51, 51) 4px);
+          z-index: 99;
         }
       }
       .c-btn__content{
-        // position: absolute;
-        // bottom: 0;
-        // right: 0;
         margin-top: auto;
         margin-left: -8em;
         @include xl {
@@ -1538,8 +1543,8 @@ body.loading {
     margin: 0 auto;
     margin-bottom: 9%;
     padding-top: 3%;
-    @include lg {
-      margin-bottom: 12%;
+    @include sm {
+      margin-bottom: 16%;
     }
 
     /*h2タイトル*/
@@ -1571,6 +1576,9 @@ body.loading {
           margin-top: 5vh;
           padding: 2% 0;
         }
+        @include sm {
+          margin-top: 0;
+        }
         .c-reserve__inner{
           margin: 0 30%;
           @include lg {
@@ -1589,9 +1597,6 @@ body.loading {
               font-size: 0.85em;
               letter-spacing: 0.15em;
             }
-            // @include md {
-            //   font-size: 0.85em;
-            // }
           }
           p::after{
             content: "";
@@ -1655,7 +1660,7 @@ body.loading {
           .p-blog__container{
             position: relative;
             width: 100%;
-            height: 175px; /*画像反映したら修正*/
+            height: 175px;
             @include lg {
               height: 280px;
             }
@@ -1678,7 +1683,7 @@ body.loading {
               left: 0;
               width: 100%;
               height: 100%;
-              overflow: hidden; /* 擬似要素がはみ出さないようにする */
+              overflow: hidden;
               .c-triming__top{
                 position: absolute;
                 top: 0;
@@ -1744,9 +1749,10 @@ body.loading {
         }
         }
         .p-news__container{
-          height: 55%;
+          height: 15.8em;
           @include lg {
-            margin-bottom: 5vh;
+            height: auto;
+            margin-bottom: 6vh;
           }
           .p-news__information{
             .p-news__list{
@@ -1801,34 +1807,28 @@ body.loading {
 
   /*ボタン*/
   #l-main__return{
-    margin-bottom: -3%;
+    margin-bottom: -4%;
+    @include sm {
+      margin-bottom: 0;
+    }
     .l-main__arrow--pc {
-      width: 5%;
+      width: 6rem;
       margin-left: auto;
       @include lg {
+        width: 5rem;
+      }
+      @include md {
+        width: 4rem;
+      }
+      @include sm {
         display: none;
       }
       .c-return__button{
-        // position: relative;
         width: 100%;
         img{
           width: 100%;
-          transform: rotate(-90deg);
-          filter: grayscale(10%);
         }
       }
-      // .c-return__button::after{
-      //   content: "";
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   transform: rotate(-90deg);
-      //   display: block;
-      //   width: 100%;
-      //   height: 100%;
-      //   background: url("../img/longArrow2.png") no-repeat center center;
-      //   background-size: contain;
-      // }
     }
     .l-main__arrow--sp {
       display: none;
@@ -1853,7 +1853,7 @@ body.loading {
         }
       }
     }
-  }/*#l-main__retur閉じる*/
+  }/*#l-main__return閉じる*/
 }/*main閉じる*/
 
 .l-footer{
@@ -1947,6 +1947,7 @@ body.loading {
             .c-reserve__inner{
               display: flex;
               justify-content: center;
+              align-items: center;
               gap: 5%;
               width: 80%;
               margin: 0 auto;
@@ -1956,7 +1957,7 @@ body.loading {
                 }
               }
               .c-hotpepper__icon{
-                width: 8%;
+                width: 6%;
                 img{
                   width: 100%;
                   transition: filter 0.3s;

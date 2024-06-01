@@ -30,9 +30,9 @@ body.loading {
 
 .loading-rectangle {
   width: 200vw; /* 画面の横幅を超えるように設定 */
-  height: 415px; /* 画面の高さいっぱいに設定 */
-  background-color: #656733; /* 黄緑の背景色 */
-  position: relative; /* 相対位置に配置 */
+  height: 415px;
+  background-color: #909c6d;
+  position: relative;
   top: 145px;
   left: -50vw;
   transition: left 2s ease;
@@ -213,7 +213,7 @@ body.loading {
   font-size: 0.75em;
   font-weight: 600;
   border-bottom: 1px solid transparent; /* 初期状態を透明に */
-  transition: border-bottom 0.4s ease; /* border-bottom に対するトランジションを設定 */
+  transition: border-bottom 0.4s ease;
   cursor: pointer; /* 常にポインタにする */
 }
 @media screen and (max-width: 978px) {
@@ -330,7 +330,7 @@ body.loading {
 }
 @media screen and (max-width: 978px) {
   .l-wrapper .l-header__inner .p-nav__container--sp {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     padding: 10vh 0;
@@ -394,6 +394,11 @@ body.loading {
     display: grid;
     height: 50vh;
     text-align: center;
+  }
+}
+@media screen and (max-width: 478px) {
+  .l-wrapper .l-header__inner .p-nav__container--sp .p-nav__menu--sp {
+    height: 45vh;
   }
 }
 .l-wrapper .l-header__inner .p-nav__container--sp .p-nav__menu--sp li {
@@ -476,7 +481,7 @@ body.loading {
   /*MORE DETAILボタン*/
   /*#l-main__blogNews閉じる*/
   /*ボタン*/
-  /*#l-main__retur閉じる*/
+  /*#l-main__return閉じる*/
 }
 .l-wrapper .l-main__inner {
   width: 70vw;
@@ -833,11 +838,6 @@ body.loading {
     bottom: -16%;
   }
 }
-@media screen and (max-width: 478px) {
-  .l-wrapper .l-main #l-main__home .p-home__container .p-home__tag {
-    bottom: -18%;
-  }
-}
 .l-wrapper .l-main #l-main__home .p-home__container .p-home__tag .c-home__tagTitle {
   margin-bottom: 5%;
   font-size: 1.1em;
@@ -879,6 +879,8 @@ body.loading {
 @media screen and (max-width: 478px) {
   .l-wrapper .l-main #l-main__home .p-home__container .p-home__tag .c-home__tagText {
     font-size: 9px;
+    letter-spacing: 0.08em;
+    line-height: 1.6em;
   }
 }
 .l-wrapper .l-main #l-main__home .p-home__container .p-scroll__content {
@@ -963,7 +965,7 @@ body.loading {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* 擬似要素がはみ出さないようにする */
+  overflow: hidden;
 }
 .l-wrapper .l-main #l-main__concept .p-concept__container .p-concept__img .p-concept__edge .c-triming__top {
   position: absolute;
@@ -1267,7 +1269,7 @@ body.loading {
 .l-wrapper .l-main #l-main__img .p-care__container {
   position: relative;
   width: 100%;
-  height: 425px; /*画像反映したら修正*/
+  height: 425px;
 }
 @media screen and (max-width: 978px) {
   .l-wrapper .l-main #l-main__img .p-care__container {
@@ -1303,7 +1305,7 @@ body.loading {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* 擬似要素がはみ出さないようにする */
+  overflow: hidden;
 }
 @media screen and (max-width: 760px) {
   .l-wrapper .l-main #l-main__img .p-care__container .p-care__edge {
@@ -1427,7 +1429,7 @@ body.loading {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* 擬似要素がはみ出さないようにする */
+  overflow: hidden;
 }
 .l-wrapper .l-main #l-main__salonInfo .l-main__inner .p-salonInfo__container .p-salonInfo__imgBox .p-salonInfo__edge .c-triming__top {
   position: absolute;
@@ -1504,10 +1506,63 @@ body.loading {
 .l-wrapper .l-main .p-style__container .c-style__catalog {
   display: flex;
   margin: 0 auto;
+  position: relative;
 }
-.l-wrapper .l-main .p-style__container .c-style__catalog img {
+.l-wrapper .l-main .p-style__container .c-style__catalog .c-catalog {
   width: 100%;
   height: auto;
+}
+@media screen and (max-width: 760px) {
+  .l-wrapper .l-main .p-style__container .c-style__catalog .c-catalog {
+    display: none;
+  }
+}
+.l-wrapper .l-main .p-style__container .c-style__catalog .c-catalog__md {
+  display: none;
+}
+@media screen and (max-width: 760px) {
+  .l-wrapper .l-main .p-style__container .c-style__catalog .c-catalog__md {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+}
+@media screen and (max-width: 478px) {
+  .l-wrapper .l-main .p-style__container .c-style__catalog .c-catalog__md {
+    display: none;
+  }
+}
+.l-wrapper .l-main .p-style__container .c-style__catalog .c-catalog__sm {
+  display: none;
+}
+@media screen and (max-width: 478px) {
+  .l-wrapper .l-main .p-style__container .c-style__catalog .c-catalog__sm {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+}
+.l-wrapper .l-main .p-style__container .c-style__catalog::before {
+  display: none;
+}
+@media screen and (max-width: 760px) {
+  .l-wrapper .l-main .p-style__container .c-style__catalog::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 5rem;
+    height: 5rem;
+    -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
+            clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    background: repeating-linear-gradient(90deg, transparent, transparent 3px, rgb(51, 51, 51) 3px, rgb(51, 51, 51) 4px);
+    z-index: 99;
+  }
 }
 .l-wrapper .l-main .p-style__container .c-btn__content {
   margin-top: auto;
@@ -1557,9 +1612,9 @@ body.loading {
   /*長方形MOREボタン*/
   /*BLOG&NEWSセクション*/
 }
-@media screen and (max-width: 978px) {
+@media screen and (max-width: 478px) {
   .l-wrapper .l-main #l-main__blogNews {
-    margin-bottom: 12%;
+    margin-bottom: 16%;
   }
 }
 .l-wrapper .l-main #l-main__blogNews h2 {
@@ -1592,6 +1647,11 @@ body.loading {
     width: 32vw;
     margin-top: 5vh;
     padding: 2% 0;
+  }
+}
+@media screen and (max-width: 478px) {
+  .l-wrapper .l-main #l-main__blogNews .p-button__box .c-more__button {
+    margin-top: 0;
   }
 }
 .l-wrapper .l-main #l-main__blogNews .p-button__box .c-more__button .c-reserve__inner {
@@ -1683,7 +1743,7 @@ body.loading {
 .l-wrapper .l-main #l-main__blogNews .l-blogNews__container .l-main__blog .p-blog__imgBox .p-blog__container {
   position: relative;
   width: 100%;
-  height: 175px; /*画像反映したら修正*/
+  height: 175px;
 }
 @media screen and (max-width: 978px) {
   .l-wrapper .l-main #l-main__blogNews .l-blogNews__container .l-main__blog .p-blog__imgBox .p-blog__container {
@@ -1712,7 +1772,7 @@ body.loading {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* 擬似要素がはみ出さないようにする */
+  overflow: hidden;
 }
 .l-wrapper .l-main #l-main__blogNews .l-blogNews__container .l-main__blog .p-blog__imgBox .p-blog__container .p-blog__edge .c-triming__top {
   position: absolute;
@@ -1783,11 +1843,12 @@ body.loading {
   }
 }
 .l-wrapper .l-main #l-main__blogNews .l-blogNews__container .l-main__news .p-news__container {
-  height: 55%;
+  height: 15.8em;
 }
 @media screen and (max-width: 978px) {
   .l-wrapper .l-main #l-main__blogNews .l-blogNews__container .l-main__news .p-news__container {
-    margin-bottom: 5vh;
+    height: auto;
+    margin-bottom: 6vh;
   }
 }
 .l-wrapper .l-main #l-main__blogNews .l-blogNews__container .l-main__news .p-news__container .p-news__information .p-news__list {
@@ -1843,13 +1904,28 @@ body.loading {
   }
 }
 .l-wrapper .l-main #l-main__return {
-  margin-bottom: -3%;
+  margin-bottom: -4%;
+}
+@media screen and (max-width: 478px) {
+  .l-wrapper .l-main #l-main__return {
+    margin-bottom: 0;
+  }
 }
 .l-wrapper .l-main #l-main__return .l-main__arrow--pc {
-  width: 5%;
+  width: 6rem;
   margin-left: auto;
 }
 @media screen and (max-width: 978px) {
+  .l-wrapper .l-main #l-main__return .l-main__arrow--pc {
+    width: 5rem;
+  }
+}
+@media screen and (max-width: 760px) {
+  .l-wrapper .l-main #l-main__return .l-main__arrow--pc {
+    width: 4rem;
+  }
+}
+@media screen and (max-width: 478px) {
   .l-wrapper .l-main #l-main__return .l-main__arrow--pc {
     display: none;
   }
@@ -1859,8 +1935,6 @@ body.loading {
 }
 .l-wrapper .l-main #l-main__return .l-main__arrow--pc .c-return__button img {
   width: 100%;
-  transform: rotate(-90deg);
-  filter: grayscale(10%);
 }
 .l-wrapper .l-main #l-main__return .l-main__arrow--sp {
   display: none;
@@ -1992,6 +2066,7 @@ body.loading {
 .l-wrapper .l-footer .p-footer__box .p-reserve__contents .p-reserve__button .c-reserve__inner {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5%;
   width: 80%;
   margin: 0 auto;
@@ -2000,7 +2075,7 @@ body.loading {
   font-size: 180%;
 }
 .l-wrapper .l-footer .p-footer__box .p-reserve__contents .p-reserve__button .c-reserve__inner .c-hotpepper__icon {
-  width: 8%;
+  width: 6%;
 }
 .l-wrapper .l-footer .p-footer__box .p-reserve__contents .p-reserve__button .c-reserve__inner .c-hotpepper__icon img {
   width: 100%;

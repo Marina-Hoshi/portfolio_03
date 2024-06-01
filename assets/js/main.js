@@ -7,23 +7,17 @@ $(document).ready(function() {
               $('body').removeClass('loading');
           });
       }, 2000); // ローディング画面が菱形に変わった後にフェードアウト
-  }, 500); // 1秒後にローディング画面を縮小開始
+  }, 500); // ローディング画面を縮小開始
 
 
-//   // 一定時間後に要素の表示を開始
+  // 一定時間後に要素の表示を開始
   setTimeout(() => {
     $(".p-scroll__content").addClass("_isActiveFadeIn");
   }, 4000);
-  // setTimeout(() => {
-  //   $("h1, .c-top__subTitle").addClass("_isActiveFadeIn");
-  // }, 1200);
 
   setTimeout(() => {
     $(".c-slideImage, .c-scroll-text, .p-subNav__menu--pc, .p-nav__menu--pc").addClass("_isActiveFadeIn");
   }, 600);
-//   setTimeout(() => {
-//     $("h1, .c-top__subTitle").addClass("_isActiveFadeIn");
-//   }, 1200);
 
 
 //   // スクロールイベントを監視してフェードインさせる

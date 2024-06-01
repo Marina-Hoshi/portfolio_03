@@ -7,72 +7,6 @@ body.loading {
   display: none;
 } */
 
-/* ローディング画面 */
-/* #loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding-top: calc(90px + 4%);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background-color: #FFFFFF;
-  opacity: 1;
-  z-index: 9999;
-}
-
-#loading-screen.fade-out {
-  display: none;
-} */
-
-/* .loading-rectangle {
-  width: 90vw;
-  height: 415px;
-  position: relative;
-  background-color: #656733;
-  opacity: 0;
-  transition: opacity 1.5s ease;
-}
-.loading-rectangle.fade-in {
-  opacity: 1;
-}
-.loading-rectangle.fade-out {
-  opacity: 0;
-} */
-/*
-.loading-rectangle::before,
-.loading-rectangle::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 12rem 12rem 0 0;
-  border-color: #FFFFFF transparent transparent transparent;
-  opacity: 0;
-  transition: opacity 0.5s ease, border-width 0.5s ease;
-}
-.loading-rectangle::before {
-  top: 0;
-  left: 0;
-}
-.loading-rectangle::after {
-  bottom: 0;
-  right: 0;
-  transform: rotate(180deg);
-}
-
-.loading-rectangle.fade-in::before,
-.loading-rectangle.fade-in::after {
-  opacity: 1;
-  transition: opacity 1s ease-in;
-} */
-
-
-
-
 /* フェードインする要素の初期設定 */
 ._scrollFadeIn {
   opacity: 0;
@@ -84,21 +18,6 @@ body.loading {
 ._isActiveFadeIn {
   opacity: 1;
 }
-
-/* .p-about__imgTop,
-.p-about__imgBottom,
-.c-top__subTitle {
-  opacity: 0;
-  transform: translateY(50px); /* 下から50px上に移動 */
-  /* transition: opacity 1s ease, transform 1s ease;
-}
-
-.p-about__imgTop._isActiveFadeIn,
-.p-about__imgBottom._isActiveFadeIn,
-.c-top__subTitle._isActiveFadeIn {
-  opacity: 1;
-  transform: translateY(0); /* 元の位置に戻す */
-/* } */
 
 
 
