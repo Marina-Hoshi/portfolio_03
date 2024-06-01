@@ -70,7 +70,7 @@ body.loading {
   }
   @include lg {
     top: 85px;
-    height: 335px;
+    height: 355px;
   }
   @include md {
     height: 285px;
@@ -90,7 +90,19 @@ body.loading {
   position: absolute;
   width: 0;
   height: 0;
-  border: 80px solid #FFFFFF;
+  border: 86px solid #FFFFFF;
+  @include xl {
+    border: 80px solid #FFFFFF;
+  }
+  @include lg {
+    border: 70px solid #FFFFFF;
+  }
+  @include md {
+    border: 54px solid #FFFFFF;
+  }
+  @include sm {
+    border: 35px solid #FFFFFF;
+  }
 }
 
 .loading-rectangle::before {
@@ -669,9 +681,21 @@ body.loading {
           top: 0;
           margin-top: -125px;
           left: -125px;
+          @include xl {
+            margin-top: -115px;
+            left: -115px;
+          }
           @include lg {
             margin-top: -100px;
             left: -100px;
+          }
+          @include md {
+            margin-top: -75px;
+            left: -75px;
+          }
+          @include sm {
+            margin-top: -50px;
+            left: -50px;
           }
         }
         .c-triming__bottom{
@@ -680,23 +704,38 @@ body.loading {
           right: 0;
           margin-bottom: -125px;
           right: -125px;
+          @include xl {
+            margin-bottom: -115px;
+            right: -115px;
+          }
           @include lg {
-            margin-bottom: -125px;
-            right: -125px;
+            margin-bottom: -100px;
+            right: -100px;
+          }
+          @include md {
+            margin-bottom: -75px;
+            right: -75px;
+          }
+          @include sm {
+            margin-bottom: -50px;
+            right: -50px;
           }
         }
         .c-triming__top,
         .c-triming__bottom {
           width: 250px;
+          @include xl {
+            width: 230px;
+          }
           @include lg {
             width: 200px;
           }
-          // @include md {
-          //   width: 17rem;
-          // }
-          // @include sm {
-          //   width: 15.5rem;
-          // }
+          @include md {
+            width: 150px;
+          }
+          @include sm {
+            width: 100px;
+          }
         }
         .c-triming__top::before,
         .c-triming__bottom::before {
