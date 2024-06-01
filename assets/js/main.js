@@ -1,21 +1,13 @@
 $(document).ready(function() {
-  $("#loading-screen").fadeIn(1000);
+  // 最初のロード時にローディング画面を表示
   setTimeout(function() {
-    $('.loading-rectangle').addClass('fade-in');
-    setTimeout(function() {
-      $('.loading-rectangle::before, .loading-rectangle::after').addClass('fade-in');
-    }, 1000); // 0.3秒後に擬似要素
-
-    // $('.l-wrapper').fadeIn();
-
-    // .loading-rectangleと擬似要素のfade-in, bodyのloadingを消す
-    setTimeout(function() {
-      $('.loading-rectangle').removeClass('fade-in');
-      // $('.loading-rectangle::before, .loading-rectangle::after').removeClass('fade-in');
-      $('body').removeClass('loading');
-      $("#loading-screen").fadeOut(1000);
-    }, 2000);
-  }, 1000);
+      $('.loading-rectangle').addClass('shrink');
+      setTimeout(function() {
+          $('#loading-screen').fadeOut(1500, function() {
+              $('body').removeClass('loading');
+          });
+      }, 2000); // ローディング画面が菱形に変わった後にフェードアウト
+  }, 500); // 1秒後にローディング画面を縮小開始
 
 
 //   // 一定時間後に要素の表示を開始

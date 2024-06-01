@@ -8,7 +8,7 @@ body.loading {
 } */
 
 /* ローディング画面 */
-#loading-screen {
+/* #loading-screen {
   position: fixed;
   top: 0;
   left: 0;
@@ -25,14 +25,14 @@ body.loading {
 
 #loading-screen.fade-out {
   display: none;
-}
+} */
 
-.loading-rectangle {
+/* .loading-rectangle {
   width: 90vw;
   height: 415px;
   position: relative;
   background-color: #656733;
-  opacity: 0; /* 最初は非表示 */
+  opacity: 0;
   transition: opacity 1.5s ease;
 }
 .loading-rectangle.fade-in {
@@ -40,8 +40,8 @@ body.loading {
 }
 .loading-rectangle.fade-out {
   opacity: 0;
-}
-
+} */
+/*
 .loading-rectangle::before,
 .loading-rectangle::after {
   content: '';
@@ -51,7 +51,7 @@ body.loading {
   border-style: solid;
   border-width: 12rem 12rem 0 0;
   border-color: #FFFFFF transparent transparent transparent;
-  opacity: 0; /* 最初は非表示 */
+  opacity: 0;
   transition: opacity 0.5s ease, border-width 0.5s ease;
 }
 .loading-rectangle::before {
@@ -68,11 +68,6 @@ body.loading {
 .loading-rectangle.fade-in::after {
   opacity: 1;
   transition: opacity 1s ease-in;
-}
-/* .loading-rectangle.fade-out::before,
-.loading-rectangle.fade-out::after {
-  opacity: 0;
-  transition: opacity 1s ease-out;
 } */
 
 

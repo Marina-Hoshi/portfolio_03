@@ -32,6 +32,87 @@ $xl: 1200px;
   }
 }
 
+body.loading {
+  overflow: hidden;
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  z-index: 9999;
+}
+
+#loading-box {
+  width: 90vw;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden; /* 内部の要素を制限してはみ出しを隠す */
+}
+
+.loading-rectangle {
+  width: 200vw; /* 画面の横幅を超えるように設定 */
+  height: 415px; /* 画面の高さいっぱいに設定 */
+  background-color: #656733; /* 黄緑の背景色 */
+  position: relative; /* 相対位置に配置 */
+  top: 145px;
+  left: -50vw;
+  transition: left 2s ease;
+  transition: right 2s ease;
+  @include xl {
+    height: 390px;
+  }
+  @include lg {
+    top: 85px;
+    height: 335px;
+  }
+  @include md {
+    height: 285px;
+  }
+}
+
+.loading-rectangle.shrink {
+  width: 100%;
+  left: 0;
+  transition: 1.5s ease;
+}
+
+
+.loading-rectangle::before,
+.loading-rectangle::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 80px solid #FFFFFF;
+}
+
+.loading-rectangle::before {
+  top: 0;
+  left: 0;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  height: 0;
+  width: 0;
+}
+
+.loading-rectangle::after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  height: 0;
+  width: 0;
+}
+
+
+
   .l-wrapper{
   width: 100%;
   height: auto;
@@ -54,8 +135,8 @@ $xl: 1200px;
 
 .l-header {
   width: 100%;
-  height: 90px;
-  padding-top: 4%;
+  height: 85px;
+  padding-top: 60px;
   @include lg {
     padding-top: 0;
   }
@@ -75,12 +156,12 @@ $xl: 1200px;
       // top: 120px;
       // left: 10%;
       width: 15vw;
-      height: 150px;
+      height: auto;
       margin-right: auto;
       z-index: 1;
       @include lg {
         height: auto;
-        margin-top: 5%;
+        margin-top: 2%;
         margin-left: 5%;
       //   left: 50%;
       //   transform: translate(-50%, -50%);
@@ -373,9 +454,6 @@ $xl: 1200px;
 .l-main {
   width: 100%;
   height: 80%;
-  @include lg {
-    padding-top: 4%;
-  }
 
   &__inner{
     width: 70vw;
@@ -564,7 +642,6 @@ $xl: 1200px;
         position: relative;
         width: 100%;
         height: 100%;
-        // height: 606px;
         .c-slideImage {
           position: absolute;
           top: 0;
@@ -590,17 +667,36 @@ $xl: 1200px;
         .c-triming__top{
           position: absolute;
           top: 0;
-          width: 20rem;
-          margin-top: -11rem;
-          left: -11rem;
+          margin-top: -125px;
+          left: -125px;
+          @include lg {
+            margin-top: -100px;
+            left: -100px;
+          }
         }
         .c-triming__bottom{
           position: absolute;
           bottom: 0;
           right: 0;
-          width: 20rem;
-          margin-bottom: -11rem;
-          right: -11rem;
+          margin-bottom: -125px;
+          right: -125px;
+          @include lg {
+            margin-bottom: -125px;
+            right: -125px;
+          }
+        }
+        .c-triming__top,
+        .c-triming__bottom {
+          width: 250px;
+          @include lg {
+            width: 200px;
+          }
+          // @include md {
+          //   width: 17rem;
+          // }
+          // @include sm {
+          //   width: 15.5rem;
+          // }
         }
         .c-triming__top::before,
         .c-triming__bottom::before {
