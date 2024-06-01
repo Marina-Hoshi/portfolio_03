@@ -12,12 +12,17 @@ $(document).ready(function() {
 
   // 一定時間後に要素の表示を開始
   setTimeout(() => {
+    $(".p-concept__container").addClass("_isActiveFadeIn");
+  }, 1500);
+
+  setTimeout(() => {
     $(".p-scroll__content").addClass("_isActiveFadeIn");
   }, 4000);
 
   setTimeout(() => {
     $(".c-slideImage, .c-scroll-text, .p-subNav__menu--pc, .p-nav__menu--pc").addClass("_isActiveFadeIn");
   }, 600);
+
 
 
 //   // スクロールイベントを監視してフェードインさせる

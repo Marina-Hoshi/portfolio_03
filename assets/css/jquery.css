@@ -3,10 +3,6 @@ body.loading {
   overflow: hidden;
 }
 
-/* .l-wrapper {
-  display: none;
-} */
-
 /* フェードインする要素の初期設定 */
 ._scrollFadeIn {
   opacity: 0;
